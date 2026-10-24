@@ -70,7 +70,7 @@ button { color: inherit; }
 .button-dark { background: #282a25; color: white; border-radius: 7px; font-size: 11px; font-weight: 600; padding: 11px 15px; }
 .button-dark:hover { background: #4b5640; }
 .button-dark svg { width: 16px; height: 16px; }
-.button-theme { border: 1px solid #e5e2d9; border-radius: 7px; padding: 9px 11px; background: transparent; color: #65675f; font-size: 10px; }
+.button-theme { appearance: none; -webkit-appearance: none; border: 1px solid #e5e2d9; border-radius: 7px; padding: 9px 11px; background: transparent; color: #65675f; font-size: 10px; white-space: nowrap; }
 .button-theme svg { width: 15px; height: 15px; }
 .workspace { width: min(1320px, calc(100% - 72px)); margin: 0 auto; }
 .intro { padding: 41px 0 30px; }

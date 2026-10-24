@@ -249,8 +249,15 @@ function renderChart() {
   });
   hubText.textContent = "breathe";
   chart.append(hubText);
-  const hubOrnament = svgElement("text", { x: cx, y: cy - 8, fill: "#a58e68", "font-size": "8", "text-anchor": "middle" });
-  hubOrnament.textContent = "✳";
+  const hubOrnament = svgElement("g", {
+    stroke: "#a58e68",
+    "stroke-width": "1",
+    "stroke-linecap": "round",
+  });
+  hubOrnament.append(
+    svgElement("path", { d: `M ${cx} ${cy - 14} V ${cy - 6} M ${cx - 4} ${cy - 10} H ${cx + 4} M ${cx - 3} ${cy - 13} L ${cx + 3} ${cy - 7} M ${cx + 3} ${cy - 13} L ${cx - 3} ${cy - 7}` }),
+    svgElement("circle", { cx, cy: cy - 10, r: "1", fill: "#a58e68", stroke: "none" }),
+  );
   chart.append(hubOrnament);
 
   const brandMark = svgElement("g", {

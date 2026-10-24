@@ -33,8 +33,10 @@ const state = {
   layers: structuredClone(initialLayers),
   activeLayer: 1,
   background: "#f6f0e7",
+  backgroundCustomized: false,
   wordColor: "#fff9ef",
   font: "'DM Sans', sans-serif",
+  darkMode: false,
 };
 
 const chart = document.querySelector("#chart");
@@ -43,6 +45,10 @@ const layerEditor = document.querySelector("#layer-editor");
 const stage = document.querySelector("#chart-stage");
 const toast = document.querySelector("#toast");
 let toastTimer;
+
+function chartBackground() {
+  return state.darkMode && !state.backgroundCustomized ? "#252525" : state.background;
+}
 
 function polar(cx, cy, radius, angle) {
   const radians = angle * Math.PI / 180;
@@ -251,7 +257,7 @@ function renderChart() {
   chart.append(hubText);
   const hubOrnament = svgElement("g", {
     stroke: "#a58e68",
-    "stroke-width": "1",
+    "stroke-width": ".55",
     "stroke-linecap": "round",
   });
   hubOrnament.append(
@@ -276,7 +282,7 @@ function renderChart() {
   const brandName = svgElement("text", {
     x: cx - 10,
     y: 410,
-    fill: "#34372f",
+    fill: state.darkMode ? "#f2f2ee" : "#34372f",
     "font-size": "13",
     "font-family": "'Manrope', sans-serif",
     "font-weight": "700",
@@ -288,7 +294,7 @@ function renderChart() {
   const brandSlogan = svgElement("text", {
     x: cx,
     y: 430,
-    fill: "#777970",
+    fill: state.darkMode ? "#b8b8ad" : "#777970",
     "font-size": "7",
     "font-family": "'DM Sans', sans-serif",
     "letter-spacing": ".8",
@@ -299,7 +305,7 @@ function renderChart() {
 
   const words = state.layers.reduce((sum, layer) => sum + layer.words.filter(Boolean).length, 0);
   document.querySelector("#word-count").textContent = `${words} words · ${state.layers.length} ${state.layers.length === 1 ? "layer" : "layers"}`;
-  stage.style.setProperty("--chart-bg", state.background);
+  stage.style.setProperty("--chart-bg", chartBackground());
 }
 
 function renderLayerControls() {
@@ -538,10 +544,27 @@ function updateColorInput(inputId, valueId, key) {
   const input = document.querySelector(inputId);
   input.addEventListener("input", () => {
     state[key] = input.value;
+    if (key === "background") state.backgroundCustomized = true;
     document.querySelector(valueId).textContent = input.value.toUpperCase();
     renderChart();
   });
 }
+
+document.querySelector("#theme-toggle").addEventListener("click", (event) => {
+  state.darkMode = !state.darkMode;
+  document.documentElement.dataset.theme = state.darkMode ? "dark" : "light";
+  document.querySelector('meta[name="theme-color"]').content = state.darkMode ? "#181818" : "#f4f2ed";
+  const button = event.currentTarget;
+  button.setAttribute("aria-pressed", String(state.darkMode));
+  button.setAttribute("aria-label", `Switch to ${state.darkMode ? "light" : "dark"} mode`);
+  button.querySelector("span").textContent = state.darkMode ? "Light mode" : "Dark mode";
+  document.querySelector("#background-color").value = chartBackground();
+  document.querySelector("#background-value").textContent = chartBackground().toUpperCase();
+  button.querySelector("svg").innerHTML = state.darkMode
+    ? '<circle cx="10" cy="10" r="3.2" stroke="currentColor" stroke-width="1.5"/><path d="M10 1.8v2m0 12.4v2M1.8 10h2m12.4 0h2M4.2 4.2l1.4 1.4m8.8 8.8 1.4 1.4m0-11.6-1.4 1.4m-8.8 8.8-1.4 1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>'
+    : '<path d="M16.8 12.1A7 7 0 0 1 7.9 3.2a7.1 7.1 0 1 0 8.9 8.9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
+  renderChart();
+});
 
 document.querySelector("#add-layer-button").addEventListener("click", () => {
   if (state.layers.length >= 6) {
@@ -566,8 +589,17 @@ document.querySelector("#reset-button").addEventListener("click", () => {
   state.layers = structuredClone(initialLayers);
   state.activeLayer = 1;
   state.background = "#f6f0e7";
+  state.backgroundCustomized = false;
   state.wordColor = "#fff9ef";
   state.font = "'DM Sans', sans-serif";
+  state.darkMode = false;
+  delete document.documentElement.dataset.theme;
+  document.querySelector('meta[name="theme-color"]').content = "#f4f2ed";
+  const themeToggle = document.querySelector("#theme-toggle");
+  themeToggle.setAttribute("aria-pressed", "false");
+  themeToggle.setAttribute("aria-label", "Switch to dark mode");
+  themeToggle.querySelector("span").textContent = "Dark mode";
+  themeToggle.querySelector("svg").innerHTML = '<path d="M16.8 12.1A7 7 0 0 1 7.9 3.2a7.1 7.1 0 1 0 8.9 8.9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
   document.querySelector("#background-color").value = state.background;
   document.querySelector("#background-value").textContent = state.background.toUpperCase();
   document.querySelector("#word-color").value = state.wordColor;
@@ -595,7 +627,7 @@ document.querySelector("#export-button").addEventListener("click", async () => {
       showToast("Could not create the chart image.");
       return;
     }
-    context.fillStyle = state.background;
+    context.fillStyle = chartBackground();
     context.fillRect(0, 0, canvas.width, canvas.height);
     context.drawImage(image, 0, 0, canvas.width, canvas.height);
     canvas.toBlob((blob) => {

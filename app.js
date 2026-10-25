@@ -36,7 +36,7 @@ const state = {
   backgroundCustomized: false,
   wordColor: "#fff9ef",
   font: "'DM Sans', sans-serif",
-  darkMode: false,
+  theme: document.documentElement.dataset.theme || "light",
 };
 
 const chart = document.querySelector("#chart");
@@ -47,7 +47,9 @@ const toast = document.querySelector("#toast");
 let toastTimer;
 
 function chartBackground() {
-  return state.darkMode && !state.backgroundCustomized ? "#252525" : state.background;
+  if (state.backgroundCustomized) return state.background;
+  if (state.theme === "mystical") return "#211b2d";
+  return state.theme === "dark" ? "#252525" : state.background;
 }
 
 function polar(cx, cy, radius, angle) {
@@ -282,7 +284,7 @@ function renderChart() {
   const brandName = svgElement("text", {
     x: cx - 10,
     y: 410,
-    fill: state.darkMode ? "#f2f2ee" : "#34372f",
+    fill: state.theme !== "light" ? "#f2f2ee" : "#34372f",
     "font-size": "13",
     "font-family": "'Manrope', sans-serif",
     "font-weight": "700",
@@ -294,7 +296,7 @@ function renderChart() {
   const brandSlogan = svgElement("text", {
     x: cx,
     y: 430,
-    fill: state.darkMode ? "#b8b8ad" : "#777970",
+    fill: state.theme !== "light" ? "#c8bdd7" : "#777970",
     "font-size": "7",
     "font-family": "'DM Sans', sans-serif",
     "letter-spacing": ".8",
@@ -550,19 +552,40 @@ function updateColorInput(inputId, valueId, key) {
   });
 }
 
-document.querySelector("#theme-toggle").addEventListener("click", (event) => {
-  state.darkMode = !state.darkMode;
-  document.documentElement.dataset.theme = state.darkMode ? "dark" : "light";
-  document.querySelector('meta[name="theme-color"]').content = state.darkMode ? "#181818" : "#f4f2ed";
-  const button = event.currentTarget;
-  button.setAttribute("aria-pressed", String(state.darkMode));
-  button.setAttribute("aria-label", `Switch to ${state.darkMode ? "light" : "dark"} mode`);
-  button.querySelector("span").textContent = state.darkMode ? "Light mode" : "Dark mode";
+function updateThemeButton() {
+  const nextTheme = { light: "dark", dark: "mystical", mystical: "light" }[state.theme];
+  const button = document.querySelector("#theme-toggle");
+  const labels = { light: "Dark mode", dark: "Mystical mode", mystical: "Light mode" };
+  const ariaLabels = { light: "Switch to dark mode", dark: "Switch to mystical mode", mystical: "Switch to light mode" };
+  const icons = {
+    dark: '<path d="M16.8 12.1A7 7 0 0 1 7.9 3.2a7.1 7.1 0 1 0 8.9 8.9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>',
+    light: '<circle cx="10" cy="10" r="3.2" stroke="currentColor" stroke-width="1.5"/><path d="M10 1.8v2m0 12.4v2M1.8 10h2m12.4 0h2M4.2 4.2l1.4 1.4m8.8 8.8 1.4 1.4m0-11.6-1.4 1.4m-8.8 8.8-1.4 1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>',
+    mystical: '<path d="m10 1.8 1.7 5.5 5.5 1.7-5.5 1.7-1.7 5.5-1.7-5.5L2.8 9l5.5-1.7L10 1.8Z" stroke="currentColor" stroke-width="1.15" stroke-linejoin="round"/><path d="m16.2 13.8.8 2.3 2.2.8-2.2.8-.8 2.3-.8-2.3-2.2-.8 2.2-.8.8-2.3Z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>',
+  };
+  button.setAttribute("aria-pressed", String(state.theme !== "light"));
+  button.setAttribute("aria-label", ariaLabels[state.theme]);
+  button.querySelector("span").textContent = labels[state.theme];
+  button.querySelector("svg").innerHTML = icons[nextTheme];
+}
+
+function setTheme(theme) {
+  state.theme = theme;
+  if (theme === "light") delete document.documentElement.dataset.theme;
+  else document.documentElement.dataset.theme = theme;
+  document.querySelector('meta[name="theme-color"]').content = {
+    light: "#f4f2ed", dark: "#181818", mystical: "#100d1b",
+  }[theme];
+  try {
+    localStorage.setItem("orbit-theme", theme);
+  } catch {}
+  updateThemeButton();
   document.querySelector("#background-color").value = chartBackground();
   document.querySelector("#background-value").textContent = chartBackground().toUpperCase();
-  button.querySelector("svg").innerHTML = state.darkMode
-    ? '<circle cx="10" cy="10" r="3.2" stroke="currentColor" stroke-width="1.5"/><path d="M10 1.8v2m0 12.4v2M1.8 10h2m12.4 0h2M4.2 4.2l1.4 1.4m8.8 8.8 1.4 1.4m0-11.6-1.4 1.4m-8.8 8.8-1.4 1.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>'
-    : '<path d="M16.8 12.1A7 7 0 0 1 7.9 3.2a7.1 7.1 0 1 0 8.9 8.9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
+}
+
+document.querySelector("#theme-toggle").addEventListener("click", () => {
+  const nextTheme = { light: "dark", dark: "mystical", mystical: "light" }[state.theme];
+  setTheme(nextTheme);
   renderChart();
 });
 
@@ -592,14 +615,7 @@ document.querySelector("#reset-button").addEventListener("click", () => {
   state.backgroundCustomized = false;
   state.wordColor = "#fff9ef";
   state.font = "'DM Sans', sans-serif";
-  state.darkMode = false;
-  delete document.documentElement.dataset.theme;
-  document.querySelector('meta[name="theme-color"]').content = "#f4f2ed";
-  const themeToggle = document.querySelector("#theme-toggle");
-  themeToggle.setAttribute("aria-pressed", "false");
-  themeToggle.setAttribute("aria-label", "Switch to dark mode");
-  themeToggle.querySelector("span").textContent = "Dark mode";
-  themeToggle.querySelector("svg").innerHTML = '<path d="M16.8 12.1A7 7 0 0 1 7.9 3.2a7.1 7.1 0 1 0 8.9 8.9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>';
+  setTheme("light");
   document.querySelector("#background-color").value = state.background;
   document.querySelector("#background-value").textContent = state.background.toUpperCase();
   document.querySelector("#word-color").value = state.wordColor;
@@ -650,4 +666,7 @@ document.querySelector("#export-button").addEventListener("click", async () => {
 
 renderThemes();
 renderLayerControls();
+updateThemeButton();
+document.querySelector("#background-color").value = chartBackground();
+document.querySelector("#background-value").textContent = chartBackground().toUpperCase();
 renderChart();

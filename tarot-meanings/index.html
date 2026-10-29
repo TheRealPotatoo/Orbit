@@ -1,0 +1,1158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f2ed">
+  <meta name="description" content="Explore all 78 tarot card meanings. Search the Major Arcana and the suits of Wands, Cups, Swords, and Pentacles for upright and reversed interpretations.">
+  <meta name="robots" content="index,follow">
+  <title>All 78 Tarot Card Meanings: Upright &amp; Reversed | Orbit</title>
+  
+<script>
+try {
+  const savedTheme = localStorage.getItem("orbit-theme");
+  if (savedTheme === "dark" || savedTheme === "mystical") document.documentElement.dataset.theme = savedTheme;
+  document.querySelector('meta[name="theme-color"]').content = {light:"#f4f2ed",dark:"#181818",mystical:"#100d1b"}[savedTheme] || "#f4f2ed";
+} catch {}
+</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css?v=20261027-celestial-calendar"><link rel="stylesheet" href="../tarot-meanings.css?v=20261027-celestial-calendar">
+</head>
+<body>
+
+<header class="topbar"><div class="topbar-inner">
+  <div class="topbar-left">
+    <a class="brand" href="../index.html" aria-label="Orbit home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="11.5" stroke="currentColor" stroke-width="1.6"/><path d="M16 4.5v23M4.5 16h23M8 8l16 16M24 8 8 24" stroke="currentColor" stroke-width="1.1" opacity=".56"/><circle cx="16" cy="16" r="2.5" fill="currentColor"/></svg></span><span>orbit<span class="brand-dot">.</span></span></a>
+    <nav class="page-switch" aria-label="Orbit tools">
+      <a class="page-switch-link" href="../index.html"><span class="nav-label-full">Pendulum chart</span><span class="nav-label-short">Pendulum</span></a>
+      <a class="page-switch-link" href="../tarot.html"><span class="nav-label-full">Tarot reading</span><span class="nav-label-short">Tarot</span></a>
+      <a class="page-switch-link" href="../dreams.html"><span class="nav-label-full">Dream journal</span><span class="nav-label-short">Dreams</span></a>
+      <a class="page-switch-link active" href="index.html"><span class="nav-label-full">Card meanings</span><span class="nav-label-short">Cards</span></a>
+      <a class="page-switch-link" href="../astro.html"><span class="nav-label-full">Moon &amp; sky</span><span class="nav-label-short">Sky</span></a>
+      <a class="page-switch-link" href="../birth-chart.html"><span class="nav-label-full">Birth chart</span><span class="nav-label-short">Chart</span></a>
+    </nav>
+  </div>
+  <div class="topbar-right">
+    <span class="save-status"><span class="status-dot"></span> Tarot library</span>
+    <button class="button button-theme" id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16.8 12.1A7 7 0 0 1 7.9 3.2a7.1 7.1 0 1 0 8.9 8.9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span>Dark mode</span></button>
+  </div>
+</div></header>
+
+<main class="workspace meaning-library">
+  <section class="intro meaning-intro">
+    <div class="eyebrow"><span class="eyebrow-line"></span> THE ORBIT TAROT LIBRARY</div>
+    <div class="intro-row"><div>
+      <h1>All 78 cards, <em>explored.</em></h1>
+      <p class="intro-copy">Browse the Major and Minor Arcana. Each card includes upright and reversed meanings, with a deeper guide to its themes and reflections.</p>
+    </div></div>
+  </section>
+  <section class="meaning-browser" aria-label="Search and browse tarot cards">
+    <div class="meaning-browser-header"><div><div class="section-kicker">FIND YOUR CARD</div><h2>A meaning for every moment.</h2></div><p id="meaning-count" class="meaning-count" aria-live="polite">78 cards</p></div>
+    <label class="meaning-search-label" for="meaning-search">Search by card name, keyword, or theme
+      <input id="meaning-search" type="search" placeholder="Try “Magician”, “hope”, or “new beginnings”" autocomplete="off">
+    </label>
+    <div class="meaning-filters" role="group" aria-label="Filter tarot cards by arcana or suit"><button type="button" class="meaning-filter" data-filter="major" aria-pressed="false">Major Arcana</button>
+<button type="button" class="meaning-filter" data-filter="wands" aria-pressed="false">Wands</button>
+<button type="button" class="meaning-filter" data-filter="cups" aria-pressed="false">Cups</button>
+<button type="button" class="meaning-filter" data-filter="swords" aria-pressed="false">Swords</button>
+<button type="button" class="meaning-filter" data-filter="pentacles" aria-pressed="false">Pentacles</button>
+<button type="button" class="meaning-filter active" data-filter="all" aria-pressed="true">All 78 cards</button></div>
+    <div class="meaning-grid" id="meaning-grid">
+<a class="meaning-card" href="the-fool.html" data-category="major" data-search="the fool beginnings · trust · possibility the fool opens a new chapter with curiosity and room to experiment. it can describe a leap into unfamiliar territory, the freedom of not having every answer, or the willingness to meet life before a plan is perfect. its invitation is not to ignore risk, but to pair openness with enough care to stay present to the consequences. reversed, the fool can point to hesitation that keeps a genuine beginning out of reach, or to a leap taken without noticing the ground ahead. fear of looking inexperienced may be holding you back; alternatively, excitement may be outrunning preparation. ask whether this pause is wise caution or avoidance, and whether one small, reversible first step could offer clarity.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/the-fool.jpg" alt="The Fool tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>The Fool</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Fool opens a new chapter with curiosity and room to experiment.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Fool can point to hesitation that keeps a genuine beginning out of reach, or to a leap taken…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="the-magician.html" data-category="major" data-search="the magician resourcefulness · focus · initiative the magician is about turning intention into action. the tools are already on the table: skills, knowledge, time, relationships, and the ability to communicate what you want. this card asks you to bring those resources together around one clear aim. potential becomes useful when attention is focused and an idea is given a real first form. reversed, the magician can describe scattered attention, underestimating your own abilities, or having resources you have not yet put to honest use. it can also ask for care around persuasion: are words being used to clarify and create, or to impress, evade, or control? reclaim focus, check the facts, and choose a transparent next action.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/the-magician.jpg" alt="The Magician tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>The Magician</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Magician is about turning intention into action.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Magician can describe scattered attention, underestimating your own abilities, or having…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="the-high-priestess.html" data-category="major" data-search="the high priestess intuition · quiet · the unseen the high priestess invites attentive stillness. some information is not ready to be resolved by more effort; subtle feelings, incomplete facts, and what has gone unsaid may need room to surface. this is a card of listening rather than assuming that a hunch is proof. give inner impressions respect while remaining curious about what you do not yet know. reversed, the high priestess may suggest that inner signals are being drowned out, or that uncertainty is being filled with projection. a private matter may need clearer words, or a pause may have become avoidance. separate what you observed from what you inferred; seek trustworthy information and let intuition inform your judgment without replacing it.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/the-high-priestess.jpg" alt="The High Priestess tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>The High Priestess</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The High Priestess invites attentive stillness.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The High Priestess may suggest that inner signals are being drowned out, or that uncertainty is being…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="the-empress.html" data-category="major" data-search="the empress nurturing · creativity · abundance the empress speaks to growth supported by care. a relationship, creative project, body, or home may be asking for patience and nourishing attention rather than force. abundance here is not simply having more; it is noticing what is alive, tending it well, and allowing pleasure, connection, and creativity to be part of a sustainable life. reversed, the empress can point to creative depletion, neglect of your own needs, or care that has become overgiving. growth may be blocked by comparison or by trying to control its pace. ask where nourishment is missing, whether support is being exchanged fairly, and what small act of care would restore a healthier relationship with your energy.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/the-empress.jpg" alt="The Empress tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>The Empress</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Empress speaks to growth supported by care.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Empress can point to creative depletion, neglect of your own needs, or care that has become…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="the-emperor.html" data-category="major" data-search="the emperor structure · boundaries · steadiness the emperor brings attention to structure, responsibility, and the boundaries that make sustained effort possible. a clear plan can protect what matters and make a difficult situation more manageable. authority is most useful when it creates stability without silencing others; aim for consistent leadership, practical limits, and rules that still leave room to respond to reality. reversed, the emperor may show rigidity, overcontrol, or a structure that no longer serves the people inside it. in another context, missing boundaries or inconsistent leadership may be creating instability. notice whether you are gripping too tightly or avoiding responsibility, then define one fair limit or practical agreement that can be followed.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/the-emperor.jpg" alt="The Emperor tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>The Emperor</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Emperor brings attention to structure, responsibility, and the boundaries that make sustained…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Emperor may show rigidity, overcontrol, or a structure that no longer serves the people inside it.</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="the-hierophant.html" data-category="major" data-search="the hierophant learning · tradition · shared values the hierophant concerns learning within a tradition, community, or trusted system of knowledge. guidance from a teacher or shared practice can offer structure and belonging, especially when you are new to a subject. the card also asks you to examine the values underneath the rules: inherit what helps you live with integrity, and understand what you are choosing. reversed, the hierophant may reflect pressure to conform, beliefs accepted without examination, or the need to find a path outside an established framework. it can also warn against rejecting useful guidance merely to prove independence. compare advice with your values and lived experience; choose your teachers and communities with care.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/the-hierophant.jpg" alt="The Hierophant tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>The Hierophant</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Hierophant concerns learning within a tradition, community, or trusted system of knowledge.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Hierophant may reflect pressure to conform, beliefs accepted without examination, or the need to…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="the-lovers.html" data-category="major" data-search="the lovers connection · values · choice the lovers represents meaningful connection and the choices that shape it. attraction may be present, but the deeper question is whether honesty, respect, and shared values can support the bond. this card can also appear when two possibilities ask you to choose with integrity. a good decision is not always effortless; it is one you can stand behind. reversed, the lovers may show distance, unresolved tension, unequal commitment, or a choice made against your own values. it does not automatically mean a relationship must end. name what is not being said, listen for differences beneath the surface, and consider whether both people can take part in repair without abandoning themselves.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/the-lovers.jpg" alt="The Lovers tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>The Lovers</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Lovers represents meaningful connection and the choices that shape it.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Lovers may show distance, unresolved tension, unequal commitment, or a choice made against your…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="the-chariot.html" data-category="major" data-search="the chariot direction · discipline · momentum the chariot is purposeful movement through competing pressures. progress depends on choosing a direction and guiding different needs rather than pretending they do not conflict. confidence and discipline can carry you forward, but the card also asks you to remain responsive; momentum is valuable when you are steering it, not simply pushing harder. reversed, the chariot may signal scattered effort, a lost sense of direction, or momentum driven by urgency rather than intention. trying to control every variable can be as unhelpful as giving up on the route. stop long enough to decide what matters most, then set a pace you can sustain and review along the way.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/the-chariot.jpg" alt="The Chariot tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>The Chariot</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Chariot is purposeful movement through competing pressures.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Chariot may signal scattered effort, a lost sense of direction, or momentum driven by urgency…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="strength.html" data-category="major" data-search="strength courage · patience · compassion strength describes courage expressed through patience and compassion. it is the steadiness to stay with a difficult feeling without letting it dictate every action. influence may come through calm boundaries, self-respect, and gentle persistence rather than force. this card honours the ongoing work of relating wisely to instinct, fear, and vulnerability. reversed, strength can reflect self-doubt, depleted patience, or reacting more harshly than you intend. sometimes the challenge is not to become tougher but to stop measuring yourself by constant endurance. notice where you need rest, encouragement, or a boundary, and treat vulnerability as information rather than a failure.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/strength.jpg" alt="Strength tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Strength</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">Strength describes courage expressed through patience and compassion.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">Strength can reflect self-doubt, depleted patience, or reacting more harshly than you intend.</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="the-hermit.html" data-category="major" data-search="the hermit reflection · solitude · perspective the hermit marks a useful retreat for reflection. time alone, careful study, or distance from outside noise can help you hear your own judgment again. solitude is most nourishing when it leads to understanding that can re-enter daily life. you do not need to solve everything immediately; a quieter pace may show which question is truly yours. reversed, the hermit can point to isolation that has lasted too long, or to avoiding a necessary inner question by staying constantly occupied. it may also indicate that advice is being sought from others while your own experience goes unheard. reconnect at a pace that feels safe and consider who can offer thoughtful company.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/the-hermit.jpg" alt="The Hermit tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>The Hermit</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Hermit marks a useful retreat for reflection.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Hermit can point to isolation that has lasted too long, or to avoiding a necessary inner question…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="wheel-of-fortune.html" data-category="major" data-search="wheel of fortune cycles · turning points · adaptation the wheel of fortune reflects changing conditions and the cycles that shape a situation. a shift may open an opportunity or close a familiar chapter, often without being fully under your control. this card is not a guarantee of luck; it asks you to notice timing, adapt intelligently, and distinguish the changing circumstances from the choices that remain yours. reversed, the wheel may describe resistance to a change already underway, repeating a pattern without examining it, or feeling caught in a difficult cycle. it can also remind you that a temporary setback is not the whole story. identify what is within your influence, what must be accepted for now, and what pattern you can interrupt.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/wheel-of-fortune.jpg" alt="Wheel of Fortune tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Wheel of Fortune</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Wheel of Fortune reflects changing conditions and the cycles that shape a situation.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Wheel may describe resistance to a change already underway, repeating a pattern without examining…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="justice.html" data-category="major" data-search="justice fairness · truth · accountability justice asks for clear-eyed honesty, fair process, and accountability. the facts matter, as do the effects of your decisions on everyone involved. this card can invite a review of agreements, responsibilities, or consequences. aim to be balanced rather than simply vindicated: a fair outcome often begins with the willingness to see your own part clearly. reversed, justice may highlight an unfair arrangement, incomplete information, or the temptation to avoid responsibility. it can also warn against judging yourself or someone else before the facts are understood. recheck assumptions, make space for the perspectives being missed, and decide what repair or clearer agreement would be proportionate.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/justice.jpg" alt="Justice tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Justice</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">Justice asks for clear-eyed honesty, fair process, and accountability.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">Justice may highlight an unfair arrangement, incomplete information, or the temptation to avoid…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="the-hanged-man.html" data-category="major" data-search="the hanged man pause · surrender · new perspective the hanged man suggests a pause that can change how a problem is seen. progress may come from loosening your grip, accepting a temporary uncertainty, or giving up an approach that is no longer working. this is not passive resignation: it is a deliberate willingness to look from another angle before deciding what action is worthwhile. reversed, the hanged man can signal being stuck in a pause that has lost its purpose, resisting a perspective shift, or sacrificing more than the situation requires. ask whether waiting is producing insight or simply postponing a difficult choice. a small decision or boundary may restore movement without forcing a premature solution.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/the-hanged-man.jpg" alt="The Hanged Man tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>The Hanged Man</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Hanged Man suggests a pause that can change how a problem is seen.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Hanged Man can signal being stuck in a pause that has lost its purpose, resisting a perspective…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="death.html" data-category="major" data-search="death ending · release · transformation death represents an ending or transformation, not a literal prediction of death. a role, habit, expectation, or chapter may have reached its natural limit. acknowledging what is finished can make room for a different beginning, though grief and relief may coexist. change becomes more workable when you stop demanding that the old form continue unchanged. reversed, death may reflect clinging to a phase that has ended, postponing a necessary transition, or fearing the uncertainty that follows release. sometimes the change is already happening internally even if it is not visible yet. identify what you are trying to preserve, what it costs, and what support could make a gradual transition possible.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/death.jpg" alt="Death tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Death</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">Death represents an ending or transformation, not a literal prediction of death.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">Death may reflect clinging to a phase that has ended, postponing a necessary transition, or fearing…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="temperance.html" data-category="major" data-search="temperance balance · integration · patience temperance is the art of bringing different needs into workable relationship. progress may come through a measured adjustment, collaboration, or a rhythm that is more sustainable than an all-or-nothing response. the card values patience and experimentation: combine what is useful, notice the effect, and allow time for a steadier balance to develop. reversed, temperance can point to excess, impatience, or parts of life that are not being given compatible amounts of attention. it may also suggest trying to accommodate everyone until your own limits disappear. reassess the pace, reduce an avoidable extreme, and make one honest adjustment rather than expecting immediate perfection.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/temperance.jpg" alt="Temperance tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Temperance</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">Temperance is the art of bringing different needs into workable relationship.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">Temperance can point to excess, impatience, or parts of life that are not being given compatible…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="the-devil.html" data-category="major" data-search="the devil attachment · patterns · agency the devil brings awareness to attachments and patterns that can make freedom feel smaller: a habit, fear, power imbalance, or belief that seems impossible to question. it is not a verdict that you are bad or powerless. begin by naming the pattern honestly and noticing what it offers, what it costs, and where a choice still exists. reversed, the devil may describe recognizing a restrictive pattern and beginning to loosen its hold, or struggling to admit how much influence it has. freedom is often gradual rather than dramatic. seek practical support where needed, reduce shame, and focus on a concrete choice that increases safety and agency.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/the-devil.jpg" alt="The Devil tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>The Devil</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Devil brings awareness to attachments and patterns that can make freedom feel smaller: a habit…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Devil may describe recognizing a restrictive pattern and beginning to loosen its hold, or…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="the-tower.html" data-category="major" data-search="the tower disruption · revelation · rebuilding the tower depicts disruption that exposes a structure that could not safely remain as it was. a sudden truth or change may feel destabilizing, but it can also clarify what was already strained. focus first on immediate needs and reliable support; once the shock settles, rebuild around what is honest, strong, and genuinely yours. reversed, the tower may show bracing for a change, delaying an overdue conversation, or trying to preserve stability by avoiding a truth. it can also describe an inner upheaval happening privately. do not manufacture crisis, but do look carefully at the weak point and prepare a safer, more honest way to address it.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/the-tower.jpg" alt="The Tower tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>The Tower</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Tower depicts disruption that exposes a structure that could not safely remain as it was.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Tower may show bracing for a change, delaying an overdue conversation, or trying to preserve…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="the-star.html" data-category="major" data-search="the star hope · renewal · openness the star offers a quieter kind of hope: recovery, renewed perspective, and the willingness to imagine a future after strain. it does not promise that everything will be effortless. it suggests that restoration can begin with small honest acts—rest, connection, creative work, or asking for help—and grow as trust returns. reversed, the star may reflect discouragement, exhaustion, or difficulty believing that care will make a difference. hope may feel distant rather than absent. reduce the scale of the task: seek one source of support, notice one sign of progress, and allow healing to be uneven without treating a difficult day as proof that nothing is changing.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/the-star.jpg" alt="The Star tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>The Star</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Star offers a quieter kind of hope: recovery, renewed perspective, and the willingness to imagine…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Star may reflect discouragement, exhaustion, or difficulty believing that care will make a difference.</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="the-moon.html" data-category="major" data-search="the moon uncertainty · imagination · feeling the moon describes a passage through uncertainty, where feelings and imagination can be vivid while the facts are incomplete. it asks for attention without rushing to a conclusion. dreams, fears, and intuitions may reveal what needs care, but they are not automatically evidence. move gently, verify what can be verified, and give unclear matters time to emerge. reversed, the moon can mark fears beginning to loosen, confusion coming into view, or anxiety becoming difficult to distinguish from evidence. a hidden concern may be ready for careful attention. ground yourself in what is known, talk with someone trustworthy, and avoid treating the most frightening interpretation as the only possible one.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/the-moon.jpg" alt="The Moon tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>The Moon</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Moon describes a passage through uncertainty, where feelings and imagination can be vivid while…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Moon can mark fears beginning to loosen, confusion coming into view, or anxiety becoming…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="the-sun.html" data-category="major" data-search="the sun clarity · vitality · joy the sun brings warmth, visibility, and the pleasure of being able to understand where you stand. confidence may return through honest connection, creative play, or recognising progress that was easy to overlook. enjoyment is not frivolous here; it can restore energy and help you share success openly without diminishing anyone else&#x27;s light. reversed, the sun may describe muted joy, confidence that needs grounding, or a good development obscured by fatigue or unrealistic expectations. it does not erase the positive; it asks you to notice what is preventing you from feeling it. let progress be real without requiring it to be perfect or constant.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/the-sun.jpg" alt="The Sun tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>The Sun</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Sun brings warmth, visibility, and the pleasure of being able to understand where you stand.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Sun may describe muted joy, confidence that needs grounding, or a good development obscured by…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="judgement.html" data-category="major" data-search="judgement review · awakening · response judgement invites an honest review of the past so that it can inform, rather than dictate, your next choice. a realization or call to change may be becoming difficult to ignore. this card is not about punishment; it is about taking stock, acknowledging what you have learned, and deciding how you want to answer now. reversed, judgement may reflect harsh self-criticism, fear of being evaluated, or delaying a decision because the past still feels unresolved. learning from a mistake is different from remaining defined by it. seek a balanced account of what happened, make amends where appropriate, and choose one next step based on who you are becoming.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/judgement.jpg" alt="Judgement tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Judgement</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">Judgement invites an honest review of the past so that it can inform, rather than dictate, your next…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">Judgement may reflect harsh self-criticism, fear of being evaluated, or delaying a decision because…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="the-world.html" data-category="major" data-search="the world completion · integration · wholeness the world marks a cycle reaching meaningful completion. it can reflect the integration of experience, a goal achieved, or a sense that different parts of your life are beginning to fit together. pause to acknowledge what the work required. completion is not an ending to growth; it is a foundation from which a new cycle can begin. reversed, the world may point to unfinished business, a delayed milestone, or difficulty allowing yourself to recognise how far you have come. something may need a final practical step, or a definition of completion that is more realistic. identify what is genuinely left to do and what can be accepted as good enough to close.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/the-world.jpg" alt="The World tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>The World</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The World marks a cycle reaching meaningful completion.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The World may point to unfinished business, a delayed milestone, or difficulty allowing yourself to…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="ace-of-wands.html" data-category="wands" data-search="ace of wands spark · initiative · creative energy the ace of wands is a spark of creative or personal energy: a new idea, attraction, invitation, or desire to begin. inspiration is promising but still needs a place to land. give the impulse one practical experiment, and notice whether it grows when you give it attention. reversed, the spark may be delayed, scattered, or difficult to trust. creative energy can be present without a clear outlet, or excitement may fade when the first obstacle appears. reduce the pressure to produce something perfect and choose a small test that helps distinguish a temporary impulse from a meaningful interest.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/ace-of-wands.jpg" alt="Ace of Wands tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Ace of Wands</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Ace of Wands is a spark of creative or personal energy: a new idea, attraction, invitation, or…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The spark may be delayed, scattered, or difficult to trust.</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="two-of-wands.html" data-category="wands" data-search="two of wands planning · possibility · looking ahead the two of wands is the moment after an idea becomes possible and before a direction is chosen. you may be comparing a familiar path with a wider horizon. planning matters, but it cannot remove every uncertainty. gather the information you need, then decide which possibility is worth developing. reversed, the two of wands may indicate hesitation, a plan that remains abstract, or fear of leaving a known position. it can also suggest choosing too quickly to escape uncertainty. make the next step specific and modest; a real trial often provides better information than endless comparison.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/two-of-wands.jpg" alt="Two of Wands tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Two of Wands</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Two of Wands is the moment after an idea becomes possible and before a direction is chosen.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Two of Wands may indicate hesitation, a plan that remains abstract, or fear of leaving a known…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="three-of-wands.html" data-category="wands" data-search="three of wands expansion · progress · wider horizons the three of wands looks outward as early efforts begin to create room for expansion. partnerships, new audiences, travel, or longer-range plans may come into view. progress is underway, though not yet complete. keep following through and remain open to opportunities arriving from beyond your original plan. reversed, the three of wands may reflect delays, constrained plans, or disappointment that growth is taking longer than expected. the horizon may be narrower for now, but that does not make the work meaningless. revisit timing, communication, and assumptions; adjust the route before abandoning a goal that still matters.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/three-of-wands.jpg" alt="Three of Wands tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Three of Wands</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Three of Wands looks outward as early efforts begin to create room for expansion.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Three of Wands may reflect delays, constrained plans, or disappointment that growth is taking…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="four-of-wands.html" data-category="wands" data-search="four of wands celebration · belonging · a stable milestone the four of wands celebrates a milestone, shared effort, or place where you can feel welcome. stability may come through community as much as through individual achievement. marking progress helps people recognise what they built together and gives you a moment to enjoy the foundation before the next task begins. reversed, the four of wands may point to a celebration delayed, tension around belonging, or a home or group arrangement that feels less secure than it appears. it may be wise to define what support and stability mean for you personally rather than forcing an ideal occasion. a smaller, more honest acknowledgement can still matter.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/four-of-wands.jpg" alt="Four of Wands tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Four of Wands</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Four of Wands celebrates a milestone, shared effort, or place where you can feel welcome.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Four of Wands may point to a celebration delayed, tension around belonging, or a home or group…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="five-of-wands.html" data-category="wands" data-search="five of wands friction · competition · testing ideas the five of wands brings competing ideas, energetic disagreement, or a test of how people work together. friction can reveal what needs to be clarified, but it can also waste energy when nobody is listening. separate useful challenge from personal attack and agree on what the discussion is meant to accomplish. reversed, the five of wands can indicate conflict being avoided, competition becoming exhausting, or a group beginning to move beyond its disagreements. quiet does not always mean resolution. name the tension without escalating it, and decide whether a fair conversation or a clear boundary is more useful now.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/five-of-wands.jpg" alt="Five of Wands tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Five of Wands</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Five of Wands brings competing ideas, energetic disagreement, or a test of how people work together.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Five of Wands can indicate conflict being avoided, competition becoming exhausting, or a group…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="six-of-wands.html" data-category="wands" data-search="six of wands recognition · confidence · shared success the six of wands marks visible progress, acknowledgement, or confidence earned through effort. let yourself receive recognition without making your worth dependent on applause. success is strongest when it also honours the people and steady work that helped bring it about. reversed, the six of wands may reflect recognition that has not arrived, confidence shaken by comparison, or a desire for approval that is overshadowing the work itself. a quiet achievement still counts. reconnect with the purpose behind your effort and distinguish useful feedback from the need to please everyone.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/six-of-wands.jpg" alt="Six of Wands tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Six of Wands</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Six of Wands marks visible progress, acknowledgement, or confidence earned through effort.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Six of Wands may reflect recognition that has not arrived, confidence shaken by comparison, or a…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="seven-of-wands.html" data-category="wands" data-search="seven of wands conviction · boundaries · holding your ground the seven of wands asks you to protect a position, boundary, or hard-won progress when it is being challenged. stand up for what matters, but check whether every challenge deserves the same response. conviction is most effective when paired with perspective and a clear sense of what you are defending. reversed, the seven of wands may suggest feeling outnumbered, worn down by constant defence, or defending a position that needs reconsideration. you do not have to meet every demand alone. decide which boundary is essential, where support is available, and whether a different strategy would protect your energy better.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/seven-of-wands.jpg" alt="Seven of Wands tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Seven of Wands</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Seven of Wands asks you to protect a position, boundary, or hard-won progress when it is being…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Seven of Wands may suggest feeling outnumbered, worn down by constant defence, or defending a…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="eight-of-wands.html" data-category="wands" data-search="eight of wands momentum · messages · rapid movement the eight of wands is swift movement: news, ideas, or plans arriving in quick succession. momentum can make progress feel exciting, but it also asks for clear communication and priorities. respond promptly where needed while leaving enough space to check details before agreeing to more than you can manage. reversed, the eight of wands may signal delays, crossed messages, or too many things moving at once. frustration can increase when every interruption feels urgent. confirm what is actually time-sensitive, clarify misunderstandings, and allow a stalled plan to be reviewed before forcing it forward.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/eight-of-wands.jpg" alt="Eight of Wands tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Eight of Wands</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Eight of Wands is swift movement: news, ideas, or plans arriving in quick succession.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Eight of Wands may signal delays, crossed messages, or too many things moving at once.</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="nine-of-wands.html" data-category="wands" data-search="nine of wands resilience · caution · near completion the nine of wands reflects resilience after repeated effort. you may be close to a goal yet understandably cautious about another setback. protect your energy and learn from what has already happened; perseverance does not require ignoring limits or refusing help. reversed, the nine of wands may show exhaustion, defensiveness, or difficulty trusting after a demanding stretch. you may need recovery more than another test of endurance. check whether a boundary is protecting you or keeping all support out, and define the smallest next step that does not deepen burnout.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/nine-of-wands.jpg" alt="Nine of Wands tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Nine of Wands</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Nine of Wands reflects resilience after repeated effort.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Nine of Wands may show exhaustion, defensiveness, or difficulty trusting after a demanding stretch.</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="ten-of-wands.html" data-category="wands" data-search="ten of wands responsibility · overload · carrying a lot the ten of wands depicts a heavy load: many responsibilities may be close to completion, but their combined weight is real. success can become unsustainable when every task remains yours. sort what is essential, delegate what can be shared, and make a plan for what happens after this demanding phase. reversed, the ten of wands may indicate reaching a limit, setting a burden down, or continuing to carry responsibilities that could be renegotiated. releasing a task is not automatically failure. identify which obligations are truly yours, communicate your capacity, and seek practical help before pressure becomes a crisis.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/ten-of-wands.jpg" alt="Ten of Wands tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Ten of Wands</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Ten of Wands depicts a heavy load: many responsibilities may be close to completion, but their…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Ten of Wands may indicate reaching a limit, setting a burden down, or continuing to carry…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="page-of-wands.html" data-category="wands" data-search="page of wands curiosity · discovery · an emerging idea the page of wands brings the enthusiasm of discovery: a message, invitation, or idea that awakens curiosity. it is an excellent moment to explore, learn, and try something unfamiliar. keep the energy alive by giving it a simple next step rather than demanding that it already be a complete life plan. reversed, the page of wands may describe enthusiasm that is difficult to sustain, an idea that has not been tested, or hesitation about being seen as a beginner. let curiosity be enough to begin. make a small commitment, finish one part, and notice whether the interest grows through practice.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/page-of-wands.jpg" alt="Page of Wands tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Page of Wands</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Page of Wands brings the enthusiasm of discovery: a message, invitation, or idea that awakens…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Page of Wands may describe enthusiasm that is difficult to sustain, an idea that has not been…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="knight-of-wands.html" data-category="wands" data-search="knight of wands bold action · adventure · strong momentum the knight of wands moves with boldness, initiative, and appetite for adventure. a decisive push can help when a situation has been stagnant. the challenge is to carry enthusiasm through the less glamorous details: check commitments, consider who else is affected, and make sure speed serves the destination. reversed, the knight of wands may suggest impulsive action, unreliable follow-through, or energy that burns hot and disappears. restlessness can be a signal that something needs to change, but not every urge requires an immediate leap. choose one priority and give it enough steady attention to see what it becomes.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/knight-of-wands.jpg" alt="Knight of Wands tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Knight of Wands</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Knight of Wands moves with boldness, initiative, and appetite for adventure.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Knight of Wands may suggest impulsive action, unreliable follow-through, or energy that burns hot…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="queen-of-wands.html" data-category="wands" data-search="queen of wands warm confidence · creativity · visibility the queen of wands embodies warm confidence, expressive creativity, and the ability to encourage others without shrinking yourself. let your presence be visible and your interests take up space. this card favours generosity paired with self-respect: enthusiasm is most sustainable when your boundaries are as clear as your encouragement. reversed, the queen of wands may point to self-doubt hidden behind performance, jealousy, or giving encouragement while neglecting your own energy. you may be comparing your path with someone else&#x27;s. return to the work and relationships that genuinely enliven you, and let confidence be built through honest action rather than constant validation.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/queen-of-wands.jpg" alt="Queen of Wands tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Queen of Wands</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Queen of Wands embodies warm confidence, expressive creativity, and the ability to encourage…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Queen of Wands may point to self-doubt hidden behind performance, jealousy, or giving…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="king-of-wands.html" data-category="wands" data-search="king of wands vision · leadership · inspired direction the king of wands turns vision into leadership and sustained direction. he represents the capacity to inspire movement while keeping sight of the larger purpose. take initiative, communicate the aim clearly, and make room for others to contribute; good leadership creates momentum without demanding that every idea belong to you. reversed, the king of wands may reflect overconfidence, impatience with other people&#x27;s pace, or a compelling vision without enough practical follow-through. leadership can become control when it is not accountable. revisit the evidence behind the plan, invite honest feedback, and align your influence with shared responsibility.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/king-of-wands.jpg" alt="King of Wands tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>King of Wands</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The King of Wands turns vision into leadership and sustained direction.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The King of Wands may reflect overconfidence, impatience with other people&#x27;s pace, or a compelling…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="ace-of-cups.html" data-category="cups" data-search="ace of cups emotional opening · compassion · connection the ace of cups offers an emotional opening: affection, creativity, compassion, or a renewed capacity to feel. it can mark the beginning of a connection or a gentler relationship with yourself. let the feeling be welcomed without assuming it must immediately become a promise; emotional beginnings also need time and mutual care. reversed, the ace of cups may indicate feelings held back, emotional depletion, or a beginning that needs more room before it can flow. it can be difficult to receive care when you are accustomed to giving it. attend to your own needs, create a safe outlet for emotion, and avoid forcing intimacy before trust is ready.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/ace-of-cups.jpg" alt="Ace of Cups tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Ace of Cups</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Ace of Cups offers an emotional opening: affection, creativity, compassion, or a renewed capacity…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Ace of Cups may indicate feelings held back, emotional depletion, or a beginning that needs more…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="two-of-cups.html" data-category="cups" data-search="two of cups mutuality · partnership · honest exchange the two of cups centres mutual recognition: two people, ideas, or parts of yourself meeting with respect. attraction or agreement matters most when it is reciprocal and honestly communicated. this card supports repair and collaboration where both sides can speak, listen, and make choices freely. reversed, the two of cups can reflect misunderstanding, uneven effort, or a connection that needs an honest conversation. conflict does not erase care, but affection alone cannot substitute for respect and reciprocity. clarify what each person needs and whether both are willing to participate in repairing the imbalance.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/two-of-cups.jpg" alt="Two of Cups tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Two of Cups</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Two of Cups centres mutual recognition: two people, ideas, or parts of yourself meeting with respect.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Two of Cups can reflect misunderstanding, uneven effort, or a connection that needs an honest…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="three-of-cups.html" data-category="cups" data-search="three of cups friendship · celebration · community the three of cups celebrates friendship, shared joy, and the emotional nourishment of community. people who understand your experience can help you mark a milestone or feel less alone. make room for celebration, while noticing which relationships feel supportive rather than simply busy or socially expected. reversed, the three of cups may point to social exhaustion, feeling left out, or group dynamics that do not feel trustworthy. it can also suggest celebrations postponed by competing demands. seek the kind of connection that leaves you feeling included and respected, even if that means a smaller gathering or a firmer boundary.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/three-of-cups.jpg" alt="Three of Cups tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Three of Cups</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Three of Cups celebrates friendship, shared joy, and the emotional nourishment of community.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Three of Cups may point to social exhaustion, feeling left out, or group dynamics that do not…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="four-of-cups.html" data-category="cups" data-search="four of cups contemplation · dissatisfaction · reconsideration the four of cups brings a pause in which dissatisfaction or emotional fatigue deserves attention. an opportunity may be present, but you may not be ready to receive it—or it may not be right for you. rather than forcing gratitude or chasing novelty, ask what is missing and what would make engagement feel meaningful again. reversed, the four of cups may mark renewed interest after withdrawal, or restlessness that makes every option seem inadequate. you could be ready to notice an offer you previously overlooked. take a small step back into participation, while checking whether the opportunity actually fits your needs.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/four-of-cups.jpg" alt="Four of Cups tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Four of Cups</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Four of Cups brings a pause in which dissatisfaction or emotional fatigue deserves attention.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Four of Cups may mark renewed interest after withdrawal, or restlessness that makes every option…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="five-of-cups.html" data-category="cups" data-search="five of cups grief · disappointment · what remains the five of cups honours grief and disappointment without pretending they are small. attention naturally goes to what was lost, yet the card also asks whether any support or possibility remains available. turning toward what survives does not erase what mattered; it allows sorrow and continued life to occupy the same moment. reversed, the five of cups can suggest the gradual easing of grief, readiness to accept support, or difficulty releasing regret. healing is rarely linear and need not follow anyone else&#x27;s schedule. notice what you have learned, what can still be repaired, and what no longer needs to be punished in yourself.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/five-of-cups.jpg" alt="Five of Cups tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Five of Cups</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Five of Cups honours grief and disappointment without pretending they are small.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Five of Cups can suggest the gradual easing of grief, readiness to accept support, or difficulty…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="six-of-cups.html" data-category="cups" data-search="six of cups memory · tenderness · reconnection the six of cups returns to memory, tenderness, and the influence of earlier experiences. a reunion, familiar pleasure, or childhood perspective may bring comfort. nostalgia can be nourishing when it connects you with what you value; let the past inform the present without requiring you to live inside it. reversed, the six of cups may indicate being stuck in an idealized past, or becoming ready to loosen its hold and grow beyond an old role. memories can explain a reaction without deciding your future. ask which parts of the past you want to carry forward and which expectations belong to another time.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/six-of-cups.jpg" alt="Six of Cups tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Six of Cups</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Six of Cups returns to memory, tenderness, and the influence of earlier experiences.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Six of Cups may indicate being stuck in an idealized past, or becoming ready to loosen its hold…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="seven-of-cups.html" data-category="cups" data-search="seven of cups imagination · many options · discernment the seven of cups presents a field of possibilities, fantasies, and choices. imagination can reveal what you desire, but too many attractive options can blur the difference between hope and a workable plan. name what matters most, check the practical details, and choose one possibility to explore in reality. reversed, the seven of cups may signal confusion beginning to clear, or a choice being made without enough reflection. escapism can feel soothing while delaying a necessary decision. reduce the options, seek reliable information, and distinguish an appealing image from the commitments it would actually require.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/seven-of-cups.jpg" alt="Seven of Cups tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Seven of Cups</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Seven of Cups presents a field of possibilities, fantasies, and choices.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Seven of Cups may signal confusion beginning to clear, or a choice being made without enough…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="eight-of-cups.html" data-category="cups" data-search="eight of cups departure · searching · emotional honesty the eight of cups shows a decision to leave what no longer feels emotionally sufficient, even when it once mattered. the next destination may not be clear. this card honours the honesty required to seek something more aligned, while encouraging you to distinguish thoughtful departure from a momentary wish to escape discomfort. reversed, the eight of cups may reveal fear of leaving, a return to a situation you thought was finished, or uncertainty about whether it is time to move on. neither staying nor leaving is automatically the brave choice. ask what has been tried, what remains possible, and what your reasons look like when fear is set aside.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/eight-of-cups.jpg" alt="Eight of Cups tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Eight of Cups</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Eight of Cups shows a decision to leave what no longer feels emotionally sufficient, even when it…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Eight of Cups may reveal fear of leaving, a return to a situation you thought was finished, or…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="nine-of-cups.html" data-category="cups" data-search="nine of cups contentment · pleasure · a wish fulfilled the nine of cups celebrates satisfaction, pleasure, and a wish that may be taking shape. enjoying what you have does not require pretending life is perfect. check that the achievement feels nourishing in private, not only impressive from the outside, and make space to appreciate the people and choices that helped you get here. reversed, the nine of cups may point to satisfaction that does not last, overindulgence, or a goal chosen because it looks like happiness from the outside. it can also show that a genuine wish needs a more honest definition. ask what would make your life feel fulfilling in ordinary daily moments.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/nine-of-cups.jpg" alt="Nine of Cups tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Nine of Cups</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Nine of Cups celebrates satisfaction, pleasure, and a wish that may be taking shape.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Nine of Cups may point to satisfaction that does not last, overindulgence, or a goal chosen…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="ten-of-cups.html" data-category="cups" data-search="ten of cups belonging · emotional fulfilment · shared joy the ten of cups imagines emotional fulfilment as something shared: belonging, care, and relationships in which people can be themselves. it may mark a moment of harmony or the values you hope to build toward. let the image inspire connection without demanding that real family or community look perfect. reversed, the ten of cups may reveal tension beneath an idealized picture of harmony, distance within a family, or expectations that leave little room for difference. meaningful belonging can include difficult conversations. focus on the specific relationships where respect and care can be practiced rather than forcing a picture-perfect outcome.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/ten-of-cups.jpg" alt="Ten of Cups tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Ten of Cups</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Ten of Cups imagines emotional fulfilment as something shared: belonging, care, and relationships…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Ten of Cups may reveal tension beneath an idealized picture of harmony, distance within a family…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="page-of-cups.html" data-category="cups" data-search="page of cups sensitivity · imagination · a tender message the page of cups brings emotional curiosity, imaginative attention, and the possibility of a gentle message or new feeling. stay receptive to what moves you, even if it is not fully formed. sensitivity can be a creative strength when paired with boundaries that help you separate intuition, hope, and what has actually been communicated. reversed, the page of cups may indicate emotional hesitancy, daydreaming in place of communication, or feelings that are difficult to express clearly. a tender hope deserves protection, but also honest grounding. find a simple way to say what you mean, and give yourself permission to learn as you go.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/page-of-cups.jpg" alt="Page of Cups tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Page of Cups</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Page of Cups brings emotional curiosity, imaginative attention, and the possibility of a gentle…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Page of Cups may indicate emotional hesitancy, daydreaming in place of communication, or feelings…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="knight-of-cups.html" data-category="cups" data-search="knight of cups romance · invitation · emotional pursuit the knight of cups follows an emotional invitation with charm, imagination, and a desire to connect. romance or creative inspiration may be in motion. let sincerity guide the gesture: beautiful words are strongest when actions, expectations, and boundaries support them over time. reversed, the knight of cups may describe mixed signals, idealising someone, or pursuing a feeling without checking whether it is mutual and sustainable. it can also point to withdrawing when vulnerability arrives. slow the story down enough to ask what is being offered in concrete terms and how it feels in practice.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/knight-of-cups.jpg" alt="Knight of Cups tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Knight of Cups</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Knight of Cups follows an emotional invitation with charm, imagination, and a desire to connect.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Knight of Cups may describe mixed signals, idealising someone, or pursuing a feeling without…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="queen-of-cups.html" data-category="cups" data-search="queen of cups empathy · emotional wisdom · receptivity the queen of cups brings empathy and emotional insight while reminding you that compassion needs boundaries. you may be able to listen deeply to another person or to your own quieter needs. let care be receptive rather than absorbing: understanding someone&#x27;s feelings does not make you responsible for managing them. reversed, the queen of cups may reflect emotional overwhelm, blurred boundaries, or care that has become self-neglect. intuition can be hard to hear when you are carrying everyone&#x27;s feelings. return to your own body and limits, and choose a form of compassion that does not require abandoning yourself.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/queen-of-cups.jpg" alt="Queen of Cups tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Queen of Cups</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Queen of Cups brings empathy and emotional insight while reminding you that compassion needs…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Queen of Cups may reflect emotional overwhelm, blurred boundaries, or care that has become…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="king-of-cups.html" data-category="cups" data-search="king of cups emotional steadiness · diplomacy · compassion the king of cups represents emotional steadiness: the ability to feel deeply while responding with perspective. compassionate leadership, thoughtful listening, or calm communication may be needed. emotional control is not suppression; it is giving feelings enough space to inform your choices without letting one wave decide everything. reversed, the king of cups may signal feelings contained until they spill over, emotional distance, or influence used to steer others indirectly. ask whether a calm exterior is hiding a need for support or a difficult truth. communicate plainly and seek help if the emotional load is becoming hard to carry.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/king-of-cups.jpg" alt="King of Cups tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>King of Cups</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The King of Cups represents emotional steadiness: the ability to feel deeply while responding with…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The King of Cups may signal feelings contained until they spill over, emotional distance, or…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="ace-of-swords.html" data-category="swords" data-search="ace of swords clarity · truth · a decisive idea the ace of swords cuts through confusion with a clear idea, conversation, or decision. new information can bring relief, but clarity also carries responsibility: check the facts and communicate without using truth as a weapon. a precise question may open more progress than a forceful conclusion. reversed, the ace of swords can point to confusion, an untested assumption, or communication that has become distorted. a sharp opinion is not always a clear one. pause before acting, separate evidence from interpretation, and make room to correct a story when new information appears.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/ace-of-swords.jpg" alt="Ace of Swords tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Ace of Swords</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Ace of Swords cuts through confusion with a clear idea, conversation, or decision.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Ace of Swords can point to confusion, an untested assumption, or communication that has become…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="two-of-swords.html" data-category="swords" data-search="two of swords indecision · competing truths · a pause the two of swords reflects a decision held in balance while competing needs are considered. a temporary pause can protect you from reacting too quickly, but avoiding information cannot make a choice disappear. gather what is missing, listen to each concern, and define when you will revisit the decision. reversed, the two of swords may describe indecision becoming stressful, information being avoided, or a stalemate beginning to shift. you may not be able to satisfy every preference. clarify the consequences of each option and choose the one most consistent with your values and actual capacity.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/two-of-swords.jpg" alt="Two of Swords tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Two of Swords</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Two of Swords reflects a decision held in balance while competing needs are considered.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Two of Swords may describe indecision becoming stressful, information being avoided, or a…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="three-of-swords.html" data-category="swords" data-search="three of swords heartache · truth · processing loss the three of swords acknowledges pain caused by disappointment, separation, or a truth that hurts to face. naming the hurt can be part of healing; it does not require defining your future by it. allow grief its space and seek support from people who can listen without rushing you toward a lesson. reversed, the three of swords may mark the beginning of emotional repair, old pain resurfacing, or a wish to move on before the hurt has been heard. healing can be uneven. give yourself room to process, make a needed boundary, and consider support rather than carrying the experience alone.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/three-of-swords.jpg" alt="Three of Swords tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Three of Swords</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Three of Swords acknowledges pain caused by disappointment, separation, or a truth that hurts to face.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Three of Swords may mark the beginning of emotional repair, old pain resurfacing, or a wish to…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="four-of-swords.html" data-category="swords" data-search="four of swords rest · recovery · mental space the four of swords calls for recovery and deliberate mental quiet. after sustained thought or conflict, rest is part of the work, not a reward you must earn by exhaustion. step back where possible, protect a little breathing room, and return to the issue when your perspective is less depleted. reversed, the four of swords may suggest rest interrupted by worry, recovery postponed too long, or isolation mistaken for restoration. if you cannot take a full break, choose a smaller form of respite and ask what practical pressure can be reduced. your mind may need a different rhythm, not more self-criticism.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/four-of-swords.jpg" alt="Four of Swords tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Four of Swords</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Four of Swords calls for recovery and deliberate mental quiet.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Four of Swords may suggest rest interrupted by worry, recovery postponed too long, or isolation…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="five-of-swords.html" data-category="swords" data-search="five of swords conflict · cost · choosing your battles the five of swords examines conflict and its cost. a win can still damage trust if it depends on humiliation, unclear rules, or refusing to listen. protect yourself when necessary, but decide whether the goal is resolution, distance, or simply proving a point; those aims call for different responses. reversed, the five of swords may show regret after conflict, a possibility of repair, or a harmful dynamic that remains unresolved. apology is meaningful when paired with changed behaviour and safety. decide what responsibility is yours, what cannot be repaired alone, and which boundary prevents the same harm repeating.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/five-of-swords.jpg" alt="Five of Swords tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Five of Swords</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Five of Swords examines conflict and its cost.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Five of Swords may show regret after conflict, a possibility of repair, or a harmful dynamic that…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="six-of-swords.html" data-category="swords" data-search="six of swords transition · distance · gradual recovery the six of swords depicts movement away from a difficult mental or emotional climate toward calmer ground. the transition may be practical, relational, or internal, and it may carry memories with it. you do not have to feel completely healed before taking a step that makes life safer or more manageable. reversed, the six of swords may reflect difficulty leaving a painful situation, delays in transition, or old concerns following you into a new setting. sometimes the next step needs more preparation or support. identify what can travel with you as a lesson and what needs a boundary so it does not dictate the future.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/six-of-swords.jpg" alt="Six of Swords tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Six of Swords</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Six of Swords depicts movement away from a difficult mental or emotional climate toward calmer ground.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Six of Swords may reflect difficulty leaving a painful situation, delays in transition, or old…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="seven-of-swords.html" data-category="swords" data-search="seven of swords strategy · discretion · honest motives the seven of swords concerns strategy, discretion, and choices made outside the full view of others. privacy can be necessary, but secrecy can also create risk when agreements or trust are involved. ask what you are trying to protect, whether your approach is fair, and whether a more direct route is possible. reversed, the seven of swords may point to a hidden issue coming to light, a plan needing revision, or guilt about avoiding a direct conversation. it can also mean choosing to act with greater honesty after a period of evasion. take responsibility without dramatizing it and make the next step transparent where appropriate.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/seven-of-swords.jpg" alt="Seven of Swords tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Seven of Swords</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Seven of Swords concerns strategy, discretion, and choices made outside the full view of others.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Seven of Swords may point to a hidden issue coming to light, a plan needing revision, or guilt…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="eight-of-swords.html" data-category="swords" data-search="eight of swords restriction · perspective · perceived limits the eight of swords depicts feeling constrained by fear, assumptions, or circumstances that make options hard to see. the limits may be partly real, so do not blame yourself for being stuck. identify the specific barrier, separate it from predictions about what will happen, and look for one source of support or choice. reversed, the eight of swords may mark a growing awareness of options, or fear that continues to restrict action after circumstances have shifted. freedom does not require a dramatic leap. test one manageable choice, seek practical help, and notice whether the boundary is external, internal, or a combination.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/eight-of-swords.jpg" alt="Eight of Swords tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Eight of Swords</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Eight of Swords depicts feeling constrained by fear, assumptions, or circumstances that make…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Eight of Swords may mark a growing awareness of options, or fear that continues to restrict…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="nine-of-swords.html" data-category="swords" data-search="nine of swords worry · sleeplessness · compassionate perspective the nine of swords gives form to worry, guilt, or thoughts that become louder in solitude. it recognises distress without claiming that every feared outcome is true. bring the concern into daylight: write it down, check the evidence, and speak with someone safe. if anxiety is affecting daily life, support is available. reversed, the nine of swords may show anxiety easing, or distress being kept hidden until it feels heavier. you do not have to solve every thought by thinking harder. attend to sleep and support, separate a solvable problem from a recurring fear, and consider professional care if the burden persists.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/nine-of-swords.jpg" alt="Nine of Swords tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Nine of Swords</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Nine of Swords gives form to worry, guilt, or thoughts that become louder in solitude.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Nine of Swords may show anxiety easing, or distress being kept hidden until it feels heavier.</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="ten-of-swords.html" data-category="swords" data-search="ten of swords an ending · exhaustion · reaching a limit the ten of swords marks a painful ending, mental exhaustion, or the recognition that a situation has reached its limit. its drama reflects the weight of the moment, not a promise that life cannot continue. focus on immediate care and what can be learned later; first, allow the chapter to be over. reversed, the ten of swords may point to recovery after a difficult ending, fear of another blow, or keeping a painful chapter alive through repeated rumination. healing can begin quietly. protect your recovery, name what is finished, and ask what one small sign of renewed capacity would look like.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/ten-of-swords.jpg" alt="Ten of Swords tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Ten of Swords</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Ten of Swords marks a painful ending, mental exhaustion, or the recognition that a situation has…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Ten of Swords may point to recovery after a difficult ending, fear of another blow, or keeping a…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="page-of-swords.html" data-category="swords" data-search="page of swords questions · observation · new information the page of swords brings curiosity, observation, and a willingness to ask sharper questions. new information or a conversation may be developing. keep your mind open and your sources reliable; curiosity is most useful when it does not become surveillance, gossip, or certainty based on a fragment. reversed, the page of swords may suggest scattered research, miscommunication, or words sent before their consequences are considered. it can also reflect being watched or misunderstood. slow down, verify information, and choose a direct conversation over an assumption built from incomplete details.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/page-of-swords.jpg" alt="Page of Swords tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Page of Swords</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Page of Swords brings curiosity, observation, and a willingness to ask sharper questions.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Page of Swords may suggest scattered research, miscommunication, or words sent before their…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="knight-of-swords.html" data-category="swords" data-search="knight of swords directness · speed · determined thought the knight of swords moves quickly toward an idea, challenge, or conversation. determination can be valuable when delay has become its own obstacle, but speed should not erase listening. be direct about the purpose, check what you may be missing, and stay willing to change course when the facts change. reversed, the knight of swords can describe impulsive words, a plan driven by anger, or momentum that leaves little room for consequences. a forceful argument is not always an effective one. pause before sending or deciding, identify the outcome you want, and choose a pace that preserves understanding.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/knight-of-swords.jpg" alt="Knight of Swords tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Knight of Swords</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Knight of Swords moves quickly toward an idea, challenge, or conversation.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Knight of Swords can describe impulsive words, a plan driven by anger, or momentum that leaves…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="queen-of-swords.html" data-category="swords" data-search="queen of swords discernment · boundaries · clear speech the queen of swords values discernment, honest language, and boundaries informed by experience. you can be compassionate without pretending not to see what is happening. ask precise questions, communicate expectations clearly, and let insight sharpen your judgment without turning it into unnecessary harshness. reversed, the queen of swords may indicate words made cutting by hurt, excessive suspicion, or a boundary hardened into distance. it can also show that a difficult truth is being withheld. speak with clarity while checking where grief or fatigue may be shaping your interpretation.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/queen-of-swords.jpg" alt="Queen of Swords tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Queen of Swords</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Queen of Swords values discernment, honest language, and boundaries informed by experience.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Queen of Swords may indicate words made cutting by hurt, excessive suspicion, or a boundary…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="king-of-swords.html" data-category="swords" data-search="king of swords reason · strategy · accountable leadership the king of swords brings strategic thought, clear standards, and decisions supported by evidence. his strength is not detachment for its own sake, but the ability to see a situation broadly and communicate the reasoning behind a choice. use authority responsibly and leave room for human context alongside logic. reversed, the king of swords may signal rigid judgment, analysis used to avoid emotion, or authority exercised without accountability. information can be selected to justify a conclusion already chosen. reopen the reasoning, consider who is affected, and invite a perspective that could genuinely change your mind.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/king-of-swords.jpg" alt="King of Swords tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>King of Swords</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The King of Swords brings strategic thought, clear standards, and decisions supported by evidence.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The King of Swords may signal rigid judgment, analysis used to avoid emotion, or authority exercised…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="ace-of-pentacles.html" data-category="pentacles" data-search="ace of pentacles opportunity · resources · a grounded start the ace of pentacles offers a practical beginning: a resource, skill, job, health habit, or financial opportunity that could grow with care. its promise is potential, not instant security. check the terms, protect the foundation, and turn the opening into a manageable routine or plan. reversed, the ace of pentacles may point to a delayed opportunity, shaky foundations, or practical details that need attention before you commit. it can also reflect undervaluing what you already have. review the budget, time, and conditions; a slower start may be wiser than investing on hope alone.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/ace-of-pentacles.jpg" alt="Ace of Pentacles tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Ace of Pentacles</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Ace of Pentacles offers a practical beginning: a resource, skill, job, health habit, or financial…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Ace of Pentacles may point to a delayed opportunity, shaky foundations, or practical details that…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="two-of-pentacles.html" data-category="pentacles" data-search="two of pentacles adaptability · priorities · balancing demands the two of pentacles concerns the everyday work of balancing changing demands. you may be juggling resources, time, or commitments and adjusting as circumstances shift. flexibility helps, but constant juggling can hide a capacity problem. review priorities and make the trade-offs explicit before every responsibility becomes urgent. reversed, the two of pentacles may reveal overload, disorganisation, or a balance that depends on you continually compensating. you may need to simplify rather than become more efficient. decide what can be postponed, shared, or declined, and make a realistic plan for the resources you actually have.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/two-of-pentacles.jpg" alt="Two of Pentacles tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Two of Pentacles</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Two of Pentacles concerns the everyday work of balancing changing demands.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Two of Pentacles may reveal overload, disorganisation, or a balance that depends on you…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="three-of-pentacles.html" data-category="pentacles" data-search="three of pentacles craft · collaboration · building skill the three of pentacles values skilled work, collaboration, and the details that turn an idea into something dependable. progress improves when roles are clear and each contribution is respected. ask for feedback, learn from people with different strengths, and recognise the value of careful practice. reversed, the three of pentacles may indicate poor coordination, work that goes unrecognised, or a project where people are not aligned on standards. it can also reflect reluctance to learn from feedback. clarify expectations and responsibilities, then decide whether collaboration can be improved or needs to change.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/three-of-pentacles.jpg" alt="Three of Pentacles tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Three of Pentacles</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Three of Pentacles values skilled work, collaboration, and the details that turn an idea into…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Three of Pentacles may indicate poor coordination, work that goes unrecognised, or a project…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="four-of-pentacles.html" data-category="pentacles" data-search="four of pentacles security · holding on · resource boundaries the four of pentacles focuses on protecting resources and seeking security. careful saving or a firm boundary may be appropriate, especially after uncertainty. the question is whether protection is creating stability or preventing every form of change and generosity. define what enough security means in practical terms. reversed, the four of pentacles may suggest loosening a grip, reconsidering a scarcity mindset, or feeling financially or emotionally exposed. generosity should not threaten your stability, and caution need not become permanent closure. review where you can safely share or invest and where a boundary still needs to hold.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/four-of-pentacles.jpg" alt="Four of Pentacles tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Four of Pentacles</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Four of Pentacles focuses on protecting resources and seeking security.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Four of Pentacles may suggest loosening a grip, reconsidering a scarcity mindset, or feeling…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="five-of-pentacles.html" data-category="pentacles" data-search="five of pentacles hardship · exclusion · seeking support the five of pentacles acknowledges material strain, insecurity, or the pain of feeling left out. it does not say that help is impossible. identify the immediate need and the people, services, or resources that may be available; seeking support is a practical act, not a measure of your worth. reversed, the five of pentacles may describe the first signs of recovery, openness to help, or ongoing hardship that has been hidden through shame. improvement can be gradual and still matter. ask specifically for what you need, check available assistance, and let others know if isolation is making the situation harder.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/five-of-pentacles.jpg" alt="Five of Pentacles tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Five of Pentacles</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Five of Pentacles acknowledges material strain, insecurity, or the pain of feeling left out.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Five of Pentacles may describe the first signs of recovery, openness to help, or ongoing hardship…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="six-of-pentacles.html" data-category="pentacles" data-search="six of pentacles generosity · exchange · fair support the six of pentacles explores giving and receiving resources, time, or influence. generosity can strengthen a community when it respects the dignity and agency of everyone involved. look at the balance of the exchange: support is most helpful when expectations are clear and help does not become control. reversed, the six of pentacles may point to unequal exchange, support offered with strings attached, or difficulty accepting help. money and influence can create imbalances even when intentions are kind. clarify terms, protect your ability to choose, and consider whether giving or receiving needs a more sustainable boundary.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/six-of-pentacles.jpg" alt="Six of Pentacles tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Six of Pentacles</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Six of Pentacles explores giving and receiving resources, time, or influence.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Six of Pentacles may point to unequal exchange, support offered with strings attached, or…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="seven-of-pentacles.html" data-category="pentacles" data-search="seven of pentacles patience · assessment · long-term growth the seven of pentacles pauses to assess what sustained effort is producing. a project may need more time, a different method, or an honest decision about whether its return justifies continued investment. patience is active here: check the evidence, adjust the plan, and define what progress would look like. reversed, the seven of pentacles may suggest frustration with slow results, impatience, or continued investment simply because so much has already been spent. past effort deserves respect, but it does not obligate you to repeat an ineffective plan. review the costs and choose based on future value rather than sunk effort.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/seven-of-pentacles.jpg" alt="Seven of Pentacles tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Seven of Pentacles</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Seven of Pentacles pauses to assess what sustained effort is producing.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Seven of Pentacles may suggest frustration with slow results, impatience, or continued investment…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="eight-of-pentacles.html" data-category="pentacles" data-search="eight of pentacles practice · craftsmanship · steady improvement the eight of pentacles is the discipline of building skill through repetition and attention. progress may come from focused practice rather than a dramatic breakthrough. choose a standard you can maintain, notice what each attempt teaches, and let mastery develop through consistent work. reversed, the eight of pentacles may point to perfectionism, disengagement, or effort repeated without learning. you may need a better method, clearer feedback, or a break. check whether practice is improving the result and whether the standard is realistic; sustained work should build capacity, not only consume it.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/eight-of-pentacles.jpg" alt="Eight of Pentacles tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Eight of Pentacles</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Eight of Pentacles is the discipline of building skill through repetition and attention.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Eight of Pentacles may point to perfectionism, disengagement, or effort repeated without learning.</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="nine-of-pentacles.html" data-category="pentacles" data-search="nine of pentacles independence · earned comfort · self-trust the nine of pentacles reflects independence, earned comfort, and the satisfaction of being able to appreciate what you have built. enjoying your own company and resources can be a genuine achievement. let security support a fuller life rather than becoming another standard you must constantly prove. reversed, the nine of pentacles may suggest financial dependence, insecurity beneath appearances, or difficulty enjoying success without comparison. it can also ask whether independence has become isolation. review what security means beyond status and consider where support or shared enjoyment could enrich what you have built.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/nine-of-pentacles.jpg" alt="Nine of Pentacles tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Nine of Pentacles</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Nine of Pentacles reflects independence, earned comfort, and the satisfaction of being able to…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Nine of Pentacles may suggest financial dependence, insecurity beneath appearances, or difficulty…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="ten-of-pentacles.html" data-category="pentacles" data-search="ten of pentacles legacy · shared security · lasting foundations the ten of pentacles looks at long-term security, shared resources, family patterns, and the structures passed between generations. its focus is not wealth alone; it asks what kind of stability and belonging you are building. consider how today&#x27;s practical choices support the people and values you hope will endure. reversed, the ten of pentacles may reveal tension around family resources, inherited expectations, or a structure that looks secure but does not feel fair. a legacy can be reconsidered. clarify agreements, boundaries, and what success means to you rather than following a model that no longer fits.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/ten-of-pentacles.jpg" alt="Ten of Pentacles tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Ten of Pentacles</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Ten of Pentacles looks at long-term security, shared resources, family patterns, and the…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Ten of Pentacles may reveal tension around family resources, inherited expectations, or a…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="page-of-pentacles.html" data-category="pentacles" data-search="page of pentacles study · practical curiosity · a first investment the page of pentacles approaches a practical opportunity as a learner. a course, skill, budget, or new responsibility may be worth exploring through steady effort. start with the details and give curiosity a structure; small, consistent steps can turn an idea into a useful capability. reversed, the page of pentacles may indicate procrastination, a plan that lacks practical follow-through, or anxiety about beginning as a beginner. return to the smallest workable task and set a realistic time for it. learning becomes more dependable when it is practiced, not merely planned.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/page-of-pentacles.jpg" alt="Page of Pentacles tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Page of Pentacles</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Page of Pentacles approaches a practical opportunity as a learner.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Page of Pentacles may indicate procrastination, a plan that lacks practical follow-through, or…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="knight-of-pentacles.html" data-category="pentacles" data-search="knight of pentacles reliability · routine · long-term effort the knight of pentacles brings reliability, patience, and attention to the work that sustains a goal. slow progress can be meaningful when it is consistent and responsive to results. keep promises realistic, build a workable routine, and remember to check whether the route still leads where you want to go. reversed, the knight of pentacles may point to stagnation, routine without purpose, or resistance to any adjustment. it can also signal inconsistent follow-through after an overly ambitious plan. reassess the process, remove unnecessary friction, and choose a rhythm that is dependable without becoming lifeless.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/knight-of-pentacles.jpg" alt="Knight of Pentacles tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Knight of Pentacles</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Knight of Pentacles brings reliability, patience, and attention to the work that sustains a goal.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Knight of Pentacles may point to stagnation, routine without purpose, or resistance to any adjustment.</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="queen-of-pentacles.html" data-category="pentacles" data-search="queen of pentacles practical care · resourcefulness · grounded nurture the queen of pentacles combines practical competence with warmth. she represents care expressed through everyday support—managing resources, tending health, creating a welcoming space, or helping others while remaining grounded herself. let efficiency serve wellbeing, and remember that you are also part of the life you are caring for. reversed, the queen of pentacles may show overwork, neglecting your own needs while tending everyone else&#x27;s, or anxiety about material security. practical care can become another impossible standard. simplify the routine, accept help, and identify one form of nourishment that is realistic rather than idealised.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/queen-of-pentacles.jpg" alt="Queen of Pentacles tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>Queen of Pentacles</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The Queen of Pentacles combines practical competence with warmth.</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The Queen of Pentacles may show overwork, neglecting your own needs while tending everyone else&#x27;s, or…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a>
+
+<a class="meaning-card" href="king-of-pentacles.html" data-category="pentacles" data-search="king of pentacles stewardship · stability · considered provision the king of pentacles represents stewardship: managing resources and responsibilities with patience and a long view. he values dependability, but good provision is more than accumulation. build stable systems, honour commitments, and use influence to create conditions in which others can also thrive. reversed, the king of pentacles may reflect materialism, inflexible control, or security pursued at the expense of health and relationships. it can also describe unreliable management of shared resources. review the real costs of your approach, seek transparent advice where needed, and define success beyond what can be owned.">
+  <div class="meaning-card-frame">
+    <div class="meaning-card-art"><img src="card-previews/king-of-pentacles.jpg" alt="King of Pentacles tarot card artwork" loading="lazy" /></div>
+    <div class="meaning-card-content">
+      <div class="meaning-card-title"><h2>King of Pentacles</h2></div>
+      <div class="meaning-card-meanings">
+        <p><span class="meaning-card-label">Upright</span><span class="meaning-card-text">The King of Pentacles represents stewardship: managing resources and responsibilities with patience…</span></p>
+        <p><span class="meaning-card-label">Reversed</span><span class="meaning-card-text">The King of Pentacles may reflect materialism, inflexible control, or security pursued at the expense…</span></p>
+      </div>
+      <span class="meaning-card-cta">Click to explore full meaning <span aria-hidden="true">→</span></span>
+    </div>
+  </div>
+</a></div>
+    <p id="meaning-empty" class="meaning-empty" hidden>No cards match that search. Try another name or keyword.</p>
+  </section>
+  <p class="meaning-note">Tarot meanings are interpretive prompts, not fixed predictions. Consider the card alongside your own question and circumstances.</p>
+</main>
+<script src="../tarot-meanings.js?v=20261027-tarot-meanings"></script>
+</body></html>

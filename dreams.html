@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f2ed" />
+    <meta name="format-detection" content="telephone=no" />
+    <script>
+      try {
+        const theme = localStorage.getItem("orbit-theme");
+        if (theme === "dark" || theme === "mystical") document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]').content = {
+          light: "#f4f2ed", dark: "#181818", mystical: "#100d1b",
+        }[theme] || "#f4f2ed";
+      } catch {}
+    </script>
+    <title>Orbit — Dream Journal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20261027-celestial-calendar" />
+    <link rel="stylesheet" href="dreams.css?v=20261026-deeper-dream-reading" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="topbar-left">
+          <a class="brand" href="index.html" aria-label="Orbit home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="11.5" stroke="currentColor" stroke-width="1.6"/><path d="M16 4.5v23M4.5 16h23M8 8l16 16M24 8 8 24" stroke="currentColor" stroke-width="1.1" opacity=".56"/><circle cx="16" cy="16" r="2.5" fill="currentColor"/></svg>
+            </span>
+            <span>orbit<span class="brand-dot">.</span></span>
+          </a>
+          <nav class="page-switch" aria-label="Orbit tools">
+            <a class="page-switch-link" href="index.html"><span class="nav-label-full">Pendulum chart</span><span class="nav-label-short">Pendulum</span></a>
+            <a class="page-switch-link" href="tarot.html"><span class="nav-label-full">Tarot reading</span><span class="nav-label-short">Tarot</span></a>
+            <a class="page-switch-link active" href="dreams.html" aria-current="page"><span class="nav-label-full">Dream journal</span><span class="nav-label-short">Dreams</span></a>
+            <a class="page-switch-link" href="tarot-meanings/index.html"><span class="nav-label-full">Card meanings</span><span class="nav-label-short">Cards</span></a>
+            <a class="page-switch-link" href="astro.html"><span class="nav-label-full">Moon &amp; sky</span><span class="nav-label-short">Sky</span></a>
+            <a class="page-switch-link" href="birth-chart.html"><span class="nav-label-full">Birth chart</span><span class="nav-label-short">Chart</span></a>
+          </nav>
+        </div>
+        <div class="topbar-right">
+          <span class="save-status"><span class="status-dot"></span> A space to reflect</span>
+          <button class="button button-theme" id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16.8 12.1A7 7 0 0 1 7.9 3.2a7.1 7.1 0 1 0 8.9 8.9Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <span>Dark mode</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="intro">
+        <div class="eyebrow"><span class="eyebrow-line"></span> YOUR PERSONAL DREAM JOURNAL</div>
+        <div class="intro-row">
+          <div>
+            <h1>Make room for <em>meaning.</em></h1>
+            <p class="intro-copy">Write down what stayed with you. Explore the images and feelings as gentle clues from your inner world.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="dream-studio" aria-label="Dream reflection studio">
+        <form class="dream-form" id="dream-form">
+          <div class="dream-form-heading">
+            <div class="section-kicker">START WITH THE DREAM</div>
+            <h2>What do you remember?</h2>
+            <p>There is no need to make it perfect. Describe what happened, what changed, and how it felt; add waking-life context if you want a more personal reflection.</p>
+          </div>
+          <label class="dream-label" for="dream-entry">Your dream
+            <textarea id="dream-entry" name="dream" rows="8" minlength="8" maxlength="3000" placeholder="I was walking through a house I didn't recognize..." required></textarea>
+          </label>
+          <label class="dream-label context-label" for="life-context">Is anything on your mind lately? <span class="optional-label">Optional</span>
+            <textarea id="life-context" name="context" rows="3" maxlength="500" placeholder="A change, decision, relationship, or feeling you have been carrying..."></textarea>
+          </label>
+          <div class="dream-form-meta">
+            <label class="dream-label feeling-label" for="dream-feeling">How did it feel?
+              <select id="dream-feeling" name="feeling">
+                <option value="">Choose a feeling (optional)</option>
+                <option value="uneasy">Uneasy or afraid</option>
+                <option value="peaceful">Peaceful or safe</option>
+                <option value="curious">Curious or surprised</option>
+                <option value="sad">Sad or longing</option>
+                <option value="excited">Excited or energized</option>
+                <option value="confused">Confused or overwhelmed</option>
+              </select>
+            </label>
+            <span class="character-count" id="character-count" aria-live="polite">0 / 3000</span>
+          </div>
+          <button class="interpret-button" type="submit">
+            <span>Explore this dream</span>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2.5v15M2.5 10h15M4.5 4.5l11 11m0-11-11 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </button>
+          <p class="privacy-note">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4.5 7V5a3.5 3.5 0 0 1 7 0v2m-8 0h9v7h-9V7Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></svg>
+            Your dream stays on this device. It is not saved or sent anywhere.
+          </p>
+        </form>
+
+        <section class="dream-reading" id="dream-reading" aria-labelledby="reading-title" aria-live="polite" aria-atomic="false">
+          <div class="reading-empty" id="reading-empty">
+            <svg class="dream-moon" viewBox="0 0 72 72" fill="none" aria-hidden="true">
+              <path d="M45.2 12.7A25.8 25.8 0 1 0 59.3 47 22.3 22.3 0 0 1 45.2 12.7Z" stroke="currentColor" stroke-width="1.2"/>
+              <path d="m17 17 .9 3.1L21 21l-3.1.9L17 25l-.9-3.1L13 21l3.1-.9L17 17Zm39 16 .7 2.3 2.3.7-2.3.7L56 39l-.7-2.3L53 36l2.3-.7L56 33Z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+            </svg>
+            <div class="section-kicker">A MOMENT TO LISTEN</div>
+            <h2 id="reading-title" tabindex="-1">Your reflection will appear here</h2>
+            <p>Once you have shared a few details, we will look for recurring images and offer a few questions to sit with.</p>
+          </div>
+          <div class="reading-result" id="reading-result" hidden>
+            <div class="section-kicker">A REFLECTION, NOT A RULE</div>
+            <h2 id="result-title">Reading the story of your dream</h2>
+            <section class="story-reading" aria-labelledby="story-heading">
+              <h3 id="story-heading">The thread that connects it</h3>
+              <p class="result-summary" id="result-summary"></p>
+            </section>
+            <section class="life-context-reading" id="life-context-reading" hidden aria-labelledby="context-heading">
+              <h3 id="context-heading">A possible waking-life connection</h3>
+              <p id="context-connection"></p>
+            </section>
+            <div class="feeling-reflection" id="feeling-reflection" hidden></div>
+            <section class="details-reading" aria-labelledby="details-heading">
+              <h3 id="details-heading">The details you described</h3>
+              <div class="motif-list" id="motif-list"></div>
+            </section>
+            <div class="reflection-question">
+              <span class="question-mark" aria-hidden="true">?</span>
+              <div>
+                <div class="section-kicker">A QUESTION TO CARRY WITH YOU</div>
+                <p id="reflection-prompt"></p>
+                <p class="second-question" id="second-prompt"></p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <p class="dream-disclaimer">Dream symbols are personal, not universal. This reflection is for self-exploration, not diagnosis, prediction, or professional advice.</p>
+    </main>
+    <script src="dreams.js?v=20261026-deeper-dream-reading"></script>
+  </body>
+</html>

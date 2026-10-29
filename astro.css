@@ -1,0 +1,96 @@
+.astro-workspace { padding-bottom: 52px; }
+.astro-intro { padding-bottom: 22px; }
+.astro-dashboard { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: stretch; gap: 16px; }
+.astro-panel {
+  min-width: 0;
+  padding: 23px 24px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  box-shadow: 0 9px 28px rgba(43, 44, 37, .035);
+}
+.panel-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.live-badge { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 8px; letter-spacing: .12em; }
+.live-badge i { width: 6px; height: 6px; border-radius: 50%; background: #84976e; }
+.moon-overview { display: grid; grid-template-columns: 128px minmax(0, 1fr); align-items: center; gap: 22px; padding: 24px 0 22px; }
+.moon-visual { position: relative; width: 112px; aspect-ratio: 1; justify-self: center; overflow: hidden; border-radius: 50%; background: radial-gradient(circle at 38% 34%, #f5e9c9 0%, #d7c8a9 48%, #9a8b70 100%); box-shadow: 0 0 36px rgba(193, 169, 119, .23), inset -10px -8px 18px rgba(45, 37, 27, .16); }
+.moon-visual::before { position: absolute; z-index: 1; top: 0; bottom: 0; left: 0; width: calc(100% * var(--moon-shadow, 1)); border-radius: inherit; background: linear-gradient(115deg, rgba(47, 42, 37, .82), rgba(54, 48, 41, .94)); content: ""; }
+.moon-visual:not(.waxing)::before { right: 0; left: auto; }
+.moon-visual::after { position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(circle at 28% 29%, rgba(113, 95, 69, .2) 0 7%, transparent 8%), radial-gradient(circle at 62% 35%, rgba(113, 95, 69, .14) 0 10%, transparent 11%), radial-gradient(circle at 47% 65%, rgba(113, 95, 69, .13) 0 12%, transparent 13%); content: ""; }
+.astro-date { margin: 0 0 7px; color: var(--muted); font-size: 9px; letter-spacing: .055em; text-transform: uppercase; }
+.moon-copy h2, .retrograde-panel > h2, .zodiac-panel > h2 { margin: 0; color: var(--ink); font: 600 21px/1.3 "Manrope", sans-serif; letter-spacing: -.04em; }
+.moon-illumination { margin: 6px 0 0; color: var(--muted); font-size: 10px; }
+.moon-guidance { max-width: 330px; margin: 12px 0 0; color: var(--muted); font-size: 10px; line-height: 1.7; }
+.next-moon-event { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 5px 12px; padding-top: 15px; border-top: 1px solid var(--line); }
+.next-moon-event .astro-label { grid-column: 1 / -1; }
+.next-moon-event strong { color: var(--ink); font: 600 11px/1.5 "Manrope", sans-serif; }
+.next-moon-event > span:last-child { color: var(--muted); font-size: 9px; text-align: right; }
+.lunar-timeline { display: grid; gap: 7px; margin-top: 13px; }
+.lunar-timeline-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; color: var(--muted); font-size: 8px; }
+.lunar-timeline-row span:last-child { text-align: right; }
+.astro-label { color: var(--muted); font: 700 7px/1.5 "DM Sans", sans-serif; letter-spacing: .12em; }
+.astro-location { color: var(--muted); font-size: 8px; text-align: right; }
+.astro-panel-intro { margin: 7px 0 15px; color: var(--muted); font-size: 9px; line-height: 1.65; }
+.retrograde-panel > h2 { margin-top: 15px; font-size: 18px; }
+.retrograde-list { display: grid; gap: 0; }
+.retrograde-row { display: grid; grid-template-columns: 82px minmax(0, 1fr) auto; align-items: center; gap: 8px; min-height: 39px; border-top: 1px solid var(--line); }
+.retrograde-planet { color: var(--ink); font: 600 9px "Manrope", sans-serif; }
+.retrograde-state { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 8px; }
+.retrograde-state i { width: 5px; height: 5px; border-radius: 50%; background: #adb0a2; }
+.retrograde-state.is-retrograde { color: #80654d; }
+.retrograde-state.is-retrograde i { background: #ae8157; }
+.retrograde-detail { color: var(--muted); font-size: 8px; text-align: right; }
+.retrograde-detail button { padding: 4px 0 4px 4px; border: 0; background: transparent; color: var(--accent); cursor: pointer; font: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.retrograde-note { grid-column: 1 / -1; margin: -1px 0 10px; color: var(--muted); font-size: 8px; line-height: 1.65; }
+.zodiac-panel { margin-top: 16px; padding: 25px 24px 27px; }
+.zodiac-panel > h2 { margin-top: 10px; }
+.zodiac-panel > .astro-panel-intro { max-width: 650px; margin: 6px 0 19px; }
+.astro-current-transits { margin: -5px 0 17px; padding: 10px 12px; border-left: 2px solid #b89a5b; background: color-mix(in srgb, var(--panel) 90%, var(--ink) 3%); color: var(--muted); font-size: 8px; line-height: 1.65; }
+.zodiac-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.zodiac-card { min-width: 0; padding: 13px 13px 14px; border: 1px solid var(--line); border-radius: 7px; background: color-mix(in srgb, var(--panel) 90%, var(--ink) 2%); }
+.zodiac-card-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 6px; padding-bottom: 7px; border-bottom: 1px solid var(--line); }
+.zodiac-card h3 { margin: 0; color: var(--ink); font: 600 10px "Manrope", sans-serif; }
+.zodiac-dates { color: var(--muted); font-size: 7px; white-space: nowrap; }
+.zodiac-short-reading { margin: 10px 0 0; color: var(--muted); font-size: 9px; line-height: 1.65; }
+.zodiac-details-button { margin-top: 7px; padding: 4px 0; border: 0; background: transparent; color: var(--accent); cursor: pointer; font: 600 8px "DM Sans", sans-serif; text-decoration: underline; text-underline-offset: 2px; }
+.zodiac-details-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.zodiac-reading { margin-top: 11px; }
+.zodiac-point-label { margin: 0 0 5px; color: #65704f; font: 700 7.5px/1.4 "DM Sans", sans-serif; letter-spacing: .07em; text-transform: uppercase; }
+.zodiac-reading ul { display: grid; gap: 7px; margin: 0; padding-left: 14px; color: var(--muted); font-size: 9px; line-height: 1.65; }
+.zodiac-reading li { padding-left: 1px; }
+.zodiac-reading strong { color: var(--ink); font-weight: 600; }
+.astro-disclaimer { max-width: 850px; margin: 13px 2px 0; color: var(--muted); font-size: 8px; line-height: 1.7; }
+:root[data-theme="dark"] .astro-panel { border-color: #383b34; box-shadow: 0 10px 35px rgba(0, 0, 0, .14); }
+:root[data-theme="dark"] .moon-visual { background: radial-gradient(circle at 38% 34%, #f5e9c9 0%, #d7c8a9 48%, #9a8b70 100%); }
+:root[data-theme="dark"] .retrograde-state.is-retrograde { color: #dfc295; }
+:root[data-theme="dark"] .zodiac-card { border-color: #383b34; }
+:root[data-theme="mystical"] .astro-panel { border-color: rgba(205, 180, 133, .24); box-shadow: 0 16px 48px rgba(4, 3, 10, .25); }
+:root[data-theme="mystical"] .moon-visual { box-shadow: 0 0 48px rgba(213, 183, 123, .24), inset -10px -8px 18px rgba(45, 37, 27, .16); }
+:root[data-theme="mystical"] .retrograde-state.is-retrograde { color: #e2c589; }
+:root[data-theme="mystical"] .zodiac-card { border-color: #493a56; background: rgba(31, 24, 43, .76); }
+:root[data-theme="mystical"] .astro-current-transits { border-color: #d6b56f; background: rgba(31, 24, 43, .76); }
+:root[data-theme="dark"] .zodiac-point-label,
+:root[data-theme="mystical"] .zodiac-point-label { color: #d3bd8e; }
+@media (max-width: 850px) {
+  .astro-dashboard { grid-template-columns: 1fr; }
+  .moon-overview { grid-template-columns: 115px minmax(0, 1fr); }
+  .zodiac-grid { gap: 8px; }
+}
+@media (max-width: 600px) {
+  .astro-panel { padding: 19px 16px; }
+  .moon-overview { grid-template-columns: 84px minmax(0, 1fr); gap: 15px; padding: 19px 0; }
+  .moon-visual { width: 78px; }
+  .moon-copy h2 { font-size: 18px; }
+  .retrograde-row { grid-template-columns: 72px minmax(0, 1fr); gap: 3px 8px; padding: 6px 0; }
+  .retrograde-detail { grid-column: 2; text-align: left; }
+  .retrograde-note { grid-column: 1 / -1; }
+  .zodiac-panel { padding: 20px 16px; }
+  .zodiac-grid { grid-template-columns: 1fr; }
+  .zodiac-card { padding: 11px 10px; }
+  .zodiac-card h3 { font-size: 9px; }
+}
+@media (max-width: 370px) {
+  .astro-location { max-width: 110px; }
+  .zodiac-card-heading { display: block; }
+  .zodiac-dates { display: block; margin-top: 3px; }
+}

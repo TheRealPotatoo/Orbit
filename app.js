@@ -29,9 +29,177 @@ const themes = [
   { name: "Midnight", colors: ["#a94c46", "#b66a39", "#a58a36", "#70834b", "#3c8071", "#316786", "#334f7d", "#57426f"] },
 ];
 
+const makePresetLayer = (name, words, paletteIndex = 0, fontSize = 9) => ({
+  name,
+  words,
+  colors: [],
+  colorMode: "palette",
+  paletteIndex,
+  singleColor: themes[paletteIndex].colors[0],
+  fontSize,
+});
+
+const makePreset = (id, name, category, description, shape, layers, paletteIndex = 0) => ({
+  id,
+  name,
+  category,
+  description,
+  shape,
+  layers: layers.map(([layerName, words, layerPalette = paletteIndex, fontSize = 9]) => (
+    makePresetLayer(layerName, words, layerPalette, fontSize)
+  )),
+  background: "#f6f0e7",
+  wordColor: "#fff9ef",
+  font: "'DM Sans', sans-serif",
+});
+
+const presetLibrary = [
+  makePreset("yes-no", "Yes / No", "Everyday", "Quick binary answers", "half", [
+    ["Answer", ["No", "Yes"], 0],
+  ]),
+  makePreset("yes-no-maybe", "Yes / No / Maybe", "Everyday", "Three simple response options", "half", [
+    ["Answer", ["No", "Maybe", "Yes"], 2],
+  ]),
+  makePreset("yes-no-rephrase", "Yes / No / Rephrase", "Everyday", "A pause option for unclear questions", "half", [
+    ["Answer", ["No", "Rephrase", "Yes"], 2],
+  ]),
+  makePreset("four-directions", "Four directions", "Everyday", "North, east, south, and west", "full", [
+    ["Direction", ["North", "East", "South", "West"], 1],
+  ]),
+  makePreset("eight-directions", "Eight directions", "Everyday", "Cardinal and intercardinal points", "full", [
+    ["Direction", ["N", "NE", "E", "SE", "S", "SW", "W", "NW"], 1],
+  ]),
+  makePreset("percentage", "Percentage scale", "Everyday", "Estimate from 0 to 100 percent", "half", [
+    ["Percentage", ["0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"], 0, 8],
+  ]),
+  makePreset("five-point", "Five-point scale", "Everyday", "Very low through very high", "half", [
+    ["Scale", ["Very low", "Low", "Medium", "High", "Very high"], 2],
+  ]),
+  makePreset("ten-point", "Ten-point scale", "Everyday", "A simple 1-to-10 scale", "half", [
+    ["Scale", ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], 1],
+  ]),
+  makePreset("numbers-zero-nine", "Numbers 0–9", "Everyday", "Single-digit number selection", "full", [
+    ["Number", ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"], 3],
+  ]),
+  makePreset("numbers-one-twelve", "Numbers 1–12", "Everyday", "Twelve-number selector", "full", [
+    ["Number", ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"], 1],
+  ]),
+  makePreset("alphabet", "Alphabet A–Z", "Everyday", "Find a letter or spelling clue", "half", [
+    ["Letter", "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""), 3, 8],
+  ]),
+  makePreset("alphabet-groups", "Alphabet by group", "Everyday", "Narrow letters down in three stages", "half", [
+    ["Group", ["A–I", "J–R", "S–Z"], 2],
+    ["Letter", "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""), 3, 8],
+  ]),
+  makePreset("vowels-consonants", "Vowel or consonant", "Everyday", "Two-step letter sorting", "half", [
+    ["Letter type", ["Vowel", "Consonant"], 2],
+    ["Vowel", ["A", "E", "I", "O", "U"], 3],
+    ["Consonant", "BCDFGHJKLMNPQRSTVWXYZ".split(""), 1, 8],
+  ]),
+  makePreset("colors", "Color selector", "Everyday", "Choose from common colors", "half", [
+    ["Color", ["Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Pink", "White", "Black", "Brown"], 2],
+  ]),
+  makePreset("elements", "Classical elements", "Symbols & nature", "Earth, water, fire, air, and ether", "full", [
+    ["Element", ["Earth", "Water", "Fire", "Air", "Ether"], 0],
+  ]),
+  makePreset("two-options", "Two-option choice", "Decisions", "Replace with any two options", "half", [
+    ["Choice", ["Option A", "Option B"], 1],
+  ]),
+  makePreset("three-options", "Three-option choice", "Decisions", "Compare three possible paths", "half", [
+    ["Choice", ["Option A", "Option B", "Option C"], 2],
+  ]),
+  makePreset("four-options", "Four-option choice", "Decisions", "Compare four possible paths", "full", [
+    ["Choice", ["Option A", "Option B", "Option C", "Option D"], 2],
+  ]),
+  makePreset("six-options", "Six-option choice", "Decisions", "Compare options A through F", "full", [
+    ["Choice", ["A", "B", "C", "D", "E", "F"], 1],
+  ]),
+  makePreset("decision-check", "Decision check-in", "Decisions", "A reflective pause before choosing", "half", [
+    ["Prompt", ["Pause", "Gather info", "Ask for help", "Choose"], 2],
+  ]),
+  makePreset("next-step", "Next step", "Decisions", "Explore a gentle next action", "half", [
+    ["Next step", ["Rest", "Reflect", "Research", "Discuss", "Begin", "Release"], 1],
+  ]),
+  makePreset("day-of-week", "Days of the week", "Time & cycles", "Seven-day selector", "full", [
+    ["Day", ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], 0, 8],
+  ]),
+  makePreset("months", "Months of the year", "Time & cycles", "Twelve-month selector", "full", [
+    ["Month", ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 2, 8],
+  ]),
+  makePreset("time-of-day", "Time of day", "Time & cycles", "Eight broad daily time windows", "full", [
+    ["Time", ["Dawn", "Morning", "Midday", "Afternoon", "Dusk", "Evening", "Night", "Late night"], 1, 8],
+  ]),
+  makePreset("time-window", "Time window", "Time & cycles", "Find a broad planning window", "half", [
+    ["When", ["Today", "Tomorrow", "This week", "Next week", "This month", "Later"], 0],
+  ]),
+  makePreset("seasons", "Four seasons", "Time & cycles", "Spring, summer, autumn, and winter", "full", [
+    ["Season", ["Spring", "Summer", "Autumn", "Winter"], 2],
+  ]),
+  makePreset("moon-phases", "Moon phases", "Time & cycles", "Eight familiar lunar phases", "full", [
+    ["Phase", ["New", "Waxing crescent", "First quarter", "Waxing gibbous", "Full", "Waning gibbous", "Last quarter", "Waning crescent"], 3, 8],
+  ]),
+  makePreset("reflection-focus", "Reflection focus", "Self-reflection", "Choose a journal prompt theme", "half", [
+    ["Focus", ["Gratitude", "Boundaries", "Change", "Rest", "Connection", "Creativity", "Courage", "Acceptance"], 2],
+  ]),
+  makePreset("values", "Personal values", "Self-reflection", "Explore values that feel important", "half", [
+    ["Value", ["Belonging", "Curiosity", "Freedom", "Honesty", "Kindness", "Learning", "Play", "Purpose", "Security", "Service", "Trust", "Wisdom"], 1, 8],
+  ]),
+  makePreset("needs", "Needs check-in", "Self-reflection", "Name a need to reflect on", "half", [
+    ["Need", ["Rest", "Space", "Support", "Movement", "Food", "Water", "Quiet", "Connection", "Boundaries", "Play"], 2],
+  ]),
+  makePreset("feelings", "Feelings wheel", "Self-reflection", "A small vocabulary for noticing feelings", "half", [
+    ["Feeling", ["Calm", "Curious", "Hopeful", "Joyful", "Tender", "Tired", "Worried", "Frustrated", "Sad", "Overwhelmed", "Unsure", "Grateful"], 2, 8],
+  ]),
+  makePreset("communication", "Communication approach", "Self-reflection", "Consider what kind of conversation may help", "half", [
+    ["Approach", ["Listen", "Ask", "Share", "Clarify", "Pause", "Set a boundary"], 1],
+  ]),
+  makePreset("intentions", "Intention setting", "Self-reflection", "Choose a theme for your next intention", "half", [
+    ["Intention", ["Patience", "Presence", "Courage", "Kindness", "Focus", "Balance", "Trust", "Joy"], 0],
+  ]),
+  makePreset("self-care", "Self-care menu", "Wellbeing", "Everyday restorative activities", "half", [
+    ["Care idea", ["Rest", "Walk", "Stretch", "Create", "Connect", "Tidy", "Read", "Breathe"], 2],
+  ]),
+  makePreset("energy-check", "Energy check-in", "Wellbeing", "Reflect on how your energy feels", "half", [
+    ["Energy", ["Very low", "Low", "Steady", "Good", "High"], 1],
+  ]),
+  makePreset("mood-check", "Mood check-in", "Wellbeing", "A gentle, non-clinical mood reflection", "half", [
+    ["Mood", ["Settled", "Bright", "Tender", "Restless", "Low", "Mixed"], 2],
+  ]),
+  makePreset("body-awareness", "Body awareness", "Wellbeing", "Notice an area to check in with gently", "half", [
+    ["Area", ["Head", "Shoulders", "Chest", "Belly", "Back", "Hands", "Legs", "Whole body"], 1],
+  ]),
+  makePreset("chakra-reflection", "Chakra reflection", "Wellbeing", "Seven traditional chakra names for reflection", "full", [
+    ["Focus", ["Root", "Sacral", "Solar plexus", "Heart", "Throat", "Third eye", "Crown"], 3, 8],
+  ]),
+  makePreset("balance-check", "Balance check-in", "Wellbeing", "Reflect across everyday life areas", "half", [
+    ["Area", ["Rest", "Work", "Play", "Health", "Learning", "Home", "Friends", "Nature"], 0],
+  ]),
+  makePreset("natural-world", "Natural world", "Symbols & nature", "Explore familiar nature themes", "full", [
+    ["Theme", ["Mountain", "River", "Forest", "Ocean", "Sky", "Garden", "Desert", "Meadow"], 1],
+  ]),
+  makePreset("directions-elements", "Directions & elements", "Symbols & nature", "Pair directions with classical elements", "full", [
+    ["Direction", ["North", "East", "South", "West"], 1],
+    ["Element", ["Earth", "Air", "Fire", "Water"], 0],
+  ]),
+  makePreset("symbolic-animals", "Animal symbols", "Symbols & nature", "A customizable set of animal names", "half", [
+    ["Animal", ["Bear", "Butterfly", "Deer", "Dolphin", "Fox", "Hawk", "Owl", "Wolf"], 2],
+  ]),
+  makePreset("tarot-suits", "Tarot suits", "Symbols & nature", "Four suits of the tarot minor arcana", "full", [
+    ["Suit", ["Wands", "Cups", "Swords", "Pentacles"], 3],
+  ]),
+  makePreset("crystal-families", "Crystal families", "Symbols & nature", "A small, editable crystal-name selector", "half", [
+    ["Stone", ["Amethyst", "Clear quartz", "Citrine", "Jade", "Labradorite", "Moonstone", "Rose quartz", "Tiger's eye"], 1],
+  ]),
+  makePreset("reflection-three", "Past / present / possibility", "Self-reflection", "A three-part reflective prompt, not prediction", "half", [
+    ["Perspective", ["Past", "Present", "Possibility"], 2],
+  ]),
+];
+
 const state = {
   layers: structuredClone(initialLayers),
   activeLayer: 1,
+  shape: "half",
+  activePreset: null,
   background: "#f6f0e7",
   backgroundCustomized: false,
   wordColor: "#fff9ef",
@@ -52,6 +220,56 @@ function chartBackground() {
   return state.theme === "dark" ? "#252525" : state.background;
 }
 
+function drawMysticalExportBackground(context, width, height) {
+  const sky = context.createLinearGradient(0, 0, width, height);
+  sky.addColorStop(0, "#0b0816");
+  sky.addColorStop(0.48, "#171027");
+  sky.addColorStop(1, "#100b1b");
+  context.fillStyle = sky;
+  context.fillRect(0, 0, width, height);
+
+  const nebulae = [
+    { x: 0.18, y: 0.2, radius: 0.48, color: "rgba(130, 76, 164, .34)" },
+    { x: 0.79, y: 0.52, radius: 0.43, color: "rgba(55, 91, 157, .26)" },
+    { x: 0.56, y: 0.92, radius: 0.4, color: "rgba(105, 57, 132, .2)" },
+    { x: 0.39, y: 0.53, radius: 0.34, color: "rgba(132, 91, 171, .16)" },
+    { x: 0.91, y: 0.18, radius: 0.3, color: "rgba(94, 122, 190, .13)" },
+  ];
+  nebulae.forEach(({ x, y, radius, color }) => {
+    const centerX = x * width;
+    const centerY = y * height;
+    const glow = context.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius * Math.max(width, height));
+    glow.addColorStop(0, color);
+    glow.addColorStop(1, "rgba(0, 0, 0, 0)");
+    context.fillStyle = glow;
+    context.fillRect(0, 0, width, height);
+  });
+
+  const milkyWay = context.createLinearGradient(0, height * 0.9, width, height * 0.1);
+  milkyWay.addColorStop(0.2, "rgba(177, 143, 211, 0)");
+  milkyWay.addColorStop(0.49, "rgba(202, 169, 220, .075)");
+  milkyWay.addColorStop(0.58, "rgba(111, 146, 206, .045)");
+  milkyWay.addColorStop(0.76, "rgba(177, 143, 211, 0)");
+  context.fillStyle = milkyWay;
+  context.fillRect(0, 0, width, height);
+
+  let seed = 20261026;
+  const random = () => {
+    seed = (seed * 16807) % 2147483647;
+    return (seed - 1) / 2147483646;
+  };
+  const starCount = Math.round(width * height / 900);
+  for (let index = 0; index < starCount; index += 1) {
+    const x = random() * width;
+    const y = random() * height;
+    const radius = random() > 0.94 ? 1.8 : random() > 0.72 ? 1.1 : 0.65;
+    context.beginPath();
+    context.arc(x, y, radius, 0, Math.PI * 2);
+    context.fillStyle = random() > 0.45 ? "rgba(255, 247, 230, .8)" : "rgba(224, 211, 255, .76)";
+    context.fill();
+  }
+}
+
 function polar(cx, cy, radius, angle) {
   const radians = angle * Math.PI / 180;
   return { x: cx + Math.cos(radians) * radius, y: cy - Math.sin(radians) * radius };
@@ -62,6 +280,19 @@ function sectorPath(cx, cy, innerRadius, outerRadius, startAngle, endAngle) {
   const outerEnd = polar(cx, cy, outerRadius, endAngle);
   const innerEnd = polar(cx, cy, innerRadius, endAngle);
   const innerStart = polar(cx, cy, innerRadius, startAngle);
+  if (Math.abs(endAngle - startAngle) >= 359.999) {
+    const outerOpposite = polar(cx, cy, outerRadius, startAngle - 180);
+    const innerOpposite = polar(cx, cy, innerRadius, startAngle - 180);
+    return [
+      `M ${outerStart.x} ${outerStart.y}`,
+      `A ${outerRadius} ${outerRadius} 0 0 1 ${outerOpposite.x} ${outerOpposite.y}`,
+      `A ${outerRadius} ${outerRadius} 0 0 1 ${outerEnd.x} ${outerEnd.y}`,
+      `L ${innerEnd.x} ${innerEnd.y}`,
+      `A ${innerRadius} ${innerRadius} 0 0 0 ${innerOpposite.x} ${innerOpposite.y}`,
+      `A ${innerRadius} ${innerRadius} 0 0 0 ${innerStart.x} ${innerStart.y}`,
+      "Z",
+    ].join(" ");
+  }
   return [
     `M ${outerStart.x} ${outerStart.y}`,
     `A ${outerRadius} ${outerRadius} 0 0 1 ${outerEnd.x} ${outerEnd.y}`,
@@ -148,10 +379,19 @@ function colorsForLayer(layer) {
 function renderChart() {
   chart.replaceChildren();
   chart.style.fontFamily = state.font;
+  const fullCircle = state.shape === "full";
   const cx = 380;
-  const cy = 386;
+  const cy = fullCircle ? 335 : 386;
   const outerRadius = 315;
   const innerRadius = 56;
+  const angleSweep = fullCircle ? 360 : 180;
+  chart.setAttribute("viewBox", fullCircle ? "0 0 760 720" : "0 0 760 440");
+  stage.classList.toggle("full-circle", fullCircle);
+  chart.setAttribute("aria-label", `Your customizable ${fullCircle ? "full" : "half"} circle pendulum chart`);
+  document.querySelector("#shape-half").classList.toggle("active", !fullCircle);
+  document.querySelector("#shape-half").setAttribute("aria-pressed", String(!fullCircle));
+  document.querySelector("#shape-full").classList.toggle("active", fullCircle);
+  document.querySelector("#shape-full").setAttribute("aria-pressed", String(fullCircle));
   const layerWeights = state.layers.map((layer) => {
     const words = layer.words.filter(Boolean);
     const longestWord = words.reduce((longest, word) => Math.max(longest, word.length), 0);
@@ -161,23 +401,28 @@ function renderChart() {
   });
   const totalWeight = layerWeights.reduce((total, weight) => total + weight, 0);
   let ringStart = innerRadius;
-  const outline = svgElement("path", {
-    d: `M ${cx - outerRadius} ${cy} A ${outerRadius} ${outerRadius} 0 0 1 ${cx + outerRadius} ${cy}`,
-    fill: "none",
-    stroke: "rgba(50, 47, 40, .38)",
-    "stroke-width": "1.5",
-  });
+  const outline = fullCircle
+    ? svgElement("circle", {
+      cx, cy, r: outerRadius, fill: "none",
+      stroke: "rgba(50, 47, 40, .38)", "stroke-width": "1.5",
+    })
+    : svgElement("path", {
+      d: `M ${cx - outerRadius} ${cy} A ${outerRadius} ${outerRadius} 0 0 1 ${cx + outerRadius} ${cy}`,
+      fill: "none",
+      stroke: "rgba(50, 47, 40, .38)",
+      "stroke-width": "1.5",
+    });
   chart.append(outline);
 
   state.layers.forEach((layer, layerIndex) => {
     const r0 = ringStart;
     const ringSize = (outerRadius - innerRadius) * layerWeights[layerIndex] / totalWeight;
     const r1 = r0 + ringSize;
-    const segmentSize = 180 / layer.words.length;
+    const segmentSize = angleSweep / layer.words.length;
     const layerColors = colorsForLayer(layer);
     layer.words.forEach((word, index) => {
-      const startAngle = 180 - index * segmentSize;
-      const endAngle = 180 - (index + 1) * segmentSize;
+      const startAngle = (fullCircle ? 90 : 180) - index * segmentSize;
+      const endAngle = (fullCircle ? 90 : 180) - (index + 1) * segmentSize;
       const fill = layerColors[index % layerColors.length] || "#71805b";
       const wedge = svgElement("path", {
         d: sectorPath(cx, cy, r0, r1, startAngle, endAngle),
@@ -194,15 +439,32 @@ function renderChart() {
       const radialSpan = Math.max(0, ringSize - 10);
       const fontSize = layer.fontSize ?? 9;
       const estimatedWidth = word.length * fontSize * 0.56;
-      const useTangent = tangentSpan >= 42 && estimatedWidth <= tangentSpan;
-      const labelRadius = !useTangent ? r1 - fontSize * 0.7 : midRadius;
+      const frequencyLabels = /frequenc/i.test(layer.name);
+      const useTangent = !frequencyLabels && tangentSpan >= 42 && estimatedWidth <= tangentSpan;
+      const labelRadius = useTangent ? midRadius : r1 - fontSize * 0.7;
       const position = polar(cx, cy, labelRadius, midAngle);
-      const labelAngle = useTangent
-        ? 90 - midAngle
-        : (midAngle <= 90 ? -midAngle : 180 - midAngle);
-      const textAnchor = !useTangent
-        ? (midAngle <= 90 ? "end" : "start")
-        : "middle";
+      const normalizedMidAngle = ((midAngle + 180) % 360 + 360) % 360 - 180;
+      let labelAngle;
+      let textAnchor;
+      if (fullCircle) {
+        labelAngle = useTangent
+          ? 90 - midAngle
+          : (normalizedMidAngle <= 90 && normalizedMidAngle >= -90
+            ? -normalizedMidAngle
+            : 180 - normalizedMidAngle);
+        while (labelAngle > 90) labelAngle -= 180;
+        while (labelAngle < -90) labelAngle += 180;
+        textAnchor = useTangent
+          ? "middle"
+          : (normalizedMidAngle <= 90 && normalizedMidAngle >= -90 ? "end" : "start");
+      } else {
+        labelAngle = useTangent
+          ? 90 - midAngle
+          : (midAngle <= 90 ? -midAngle : 180 - midAngle);
+        textAnchor = !useTangent
+          ? (midAngle <= 90 ? "end" : "start")
+          : "middle";
+      }
       const labelSpan = useTangent ? tangentSpan : radialSpan;
       const lines = useTangent ? [word] : wrapLabel(word, Math.max(1, Math.floor(labelSpan / (fontSize * 0.56))));
       const label = svgElement("text", {
@@ -229,26 +491,30 @@ function renderChart() {
       chart.append(label);
     });
 
-    const band = svgElement("path", {
-      d: `M ${cx - r0} ${cy} A ${r0} ${r0} 0 0 1 ${cx + r0} ${cy}`,
-      fill: "none",
-      stroke: "rgba(37, 36, 31, .18)",
-      "stroke-width": "1",
-    });
+    const band = fullCircle
+      ? svgElement("circle", { cx, cy, r: r0, fill: "none", stroke: "rgba(37, 36, 31, .18)", "stroke-width": "1" })
+      : svgElement("path", {
+        d: `M ${cx - r0} ${cy} A ${r0} ${r0} 0 0 1 ${cx + r0} ${cy}`,
+        fill: "none",
+        stroke: "rgba(37, 36, 31, .18)",
+        "stroke-width": "1",
+      });
     chart.append(band);
     ringStart = r1;
   });
 
-  const hub = svgElement("path", {
-    d: `M ${cx - 56} ${cy} A 56 56 0 0 1 ${cx + 56} ${cy} L ${cx - 56} ${cy} Z`,
-    fill: "#f1eee5",
-    stroke: "rgba(40, 39, 33, .68)",
-    "stroke-width": "1.5",
-  });
+  const hub = fullCircle
+    ? svgElement("circle", { cx, cy, r: innerRadius, fill: "#f1eee5", stroke: "rgba(40, 39, 33, .68)", "stroke-width": "1.5" })
+    : svgElement("path", {
+      d: `M ${cx - 56} ${cy} A 56 56 0 0 1 ${cx + 56} ${cy} L ${cx - 56} ${cy} Z`,
+      fill: "#f1eee5",
+      stroke: "rgba(40, 39, 33, .68)",
+      "stroke-width": "1.5",
+    });
   chart.append(hub);
   const hubText = svgElement("text", {
     x: cx,
-    y: cy - 20,
+    y: fullCircle ? cy - 5 : cy - 20,
     fill: "#596448",
     "font-size": "14",
     "font-family": "'Playfair Display', serif",
@@ -263,8 +529,12 @@ function renderChart() {
     "stroke-linecap": "round",
   });
   hubOrnament.append(
-    svgElement("path", { d: `M ${cx} ${cy - 14} V ${cy - 6} M ${cx - 4} ${cy - 10} H ${cx + 4} M ${cx - 3} ${cy - 13} L ${cx + 3} ${cy - 7} M ${cx + 3} ${cy - 13} L ${cx - 3} ${cy - 7}` }),
-    svgElement("circle", { cx, cy: cy - 10, r: "1", fill: "#a58e68", stroke: "none" }),
+    svgElement("path", {
+      d: fullCircle
+        ? `M ${cx} ${cy + 6} V ${cy + 14} M ${cx - 4} ${cy + 10} H ${cx + 4} M ${cx - 3} ${cy + 7} L ${cx + 3} ${cy + 13} M ${cx + 3} ${cy + 7} L ${cx - 3} ${cy + 13}`
+        : `M ${cx} ${cy - 14} V ${cy - 6} M ${cx - 4} ${cy - 10} H ${cx + 4} M ${cx - 3} ${cy - 13} L ${cx + 3} ${cy - 7} M ${cx + 3} ${cy - 13} L ${cx - 3} ${cy - 7}`,
+    }),
+    svgElement("circle", { cx, cy: fullCircle ? cy + 10 : cy - 10, r: "1", fill: "#a58e68", stroke: "none" }),
   );
   chart.append(hubOrnament);
 
@@ -274,16 +544,20 @@ function renderChart() {
     "stroke-width": "1.2",
     "stroke-linecap": "round",
   });
+  const chartBottom = fullCircle ? cy + outerRadius : cy;
+  const brandY = chartBottom + 20;
+  const brandX = cx - 22;
+  const brandMarkSize = 7;
   brandMark.append(
-    svgElement("circle", { cx: cx - 22, cy: 406, r: "7" }),
-    svgElement("path", { d: `M ${cx - 22} 399 V 413 M ${cx - 29} 406 H ${cx - 15} M ${cx - 27} 401 L ${cx - 17} 411 M ${cx - 17} 401 L ${cx - 27} 411` }),
-    svgElement("circle", { cx: cx - 22, cy: 406, r: "1.5", fill: "#71805b", stroke: "none" }),
+    svgElement("circle", { cx: brandX, cy: brandY, r: brandMarkSize }),
+    svgElement("path", { d: `M ${brandX} ${brandY - brandMarkSize} V ${brandY + brandMarkSize} M ${brandX - brandMarkSize} ${brandY} H ${brandX + brandMarkSize} M ${brandX - brandMarkSize + 2} ${brandY - brandMarkSize + 2} L ${brandX + brandMarkSize - 2} ${brandY + brandMarkSize - 2} M ${brandX + brandMarkSize - 2} ${brandY - brandMarkSize + 2} L ${brandX - brandMarkSize + 2} ${brandY + brandMarkSize - 2}` }),
+    svgElement("circle", { cx: brandX, cy: brandY, r: "1.5", fill: "#71805b", stroke: "none" }),
   );
   chart.append(brandMark);
 
   const brandName = svgElement("text", {
     x: cx - 10,
-    y: 410,
+    y: brandY + 4,
     fill: state.theme !== "light" ? "#f2f2ee" : "#34372f",
     "font-size": "13",
     "font-family": "'Manrope', sans-serif",
@@ -295,7 +569,7 @@ function renderChart() {
 
   const brandSlogan = svgElement("text", {
     x: cx,
-    y: 430,
+    y: brandY + 24,
     fill: state.theme !== "light" ? "#c8bdd7" : "#777970",
     "font-size": "7",
     "font-family": "'DM Sans', sans-serif",
@@ -306,7 +580,7 @@ function renderChart() {
   chart.append(brandSlogan);
 
   const words = state.layers.reduce((sum, layer) => sum + layer.words.filter(Boolean).length, 0);
-  document.querySelector("#word-count").textContent = `${words} words · ${state.layers.length} ${state.layers.length === 1 ? "layer" : "layers"}`;
+  document.querySelector("#word-count").textContent = `${words} words · ${state.layers.length} ${state.layers.length === 1 ? "layer" : "layers"} · ${fullCircle ? "full" : "half"} circle`;
   stage.style.setProperty("--chart-bg", chartBackground());
 }
 
@@ -542,6 +816,91 @@ function showToast(message) {
   toastTimer = setTimeout(() => toast.classList.remove("visible"), 2400);
 }
 
+function renderPresets() {
+  const grid = document.querySelector("#preset-grid");
+  const search = document.querySelector("#preset-search").value.trim().toLowerCase();
+  const category = document.querySelector("#preset-category").value;
+  const matches = presetLibrary.filter((preset) => {
+    const searchableText = [
+      preset.name,
+      preset.category,
+      preset.description,
+      ...preset.layers.flatMap((layer) => [layer.name, ...layer.words]),
+    ].join(" ").toLowerCase();
+    return (category === "all" || preset.category === category) && searchableText.includes(search);
+  });
+  grid.replaceChildren();
+  document.querySelector("#preset-count").textContent = `${matches.length} of ${presetLibrary.length} presets`;
+  if (!matches.length) {
+    const empty = document.createElement("p");
+    empty.className = "preset-empty";
+    empty.textContent = "No presets match. Try a different search or category.";
+    grid.append(empty);
+    return;
+  }
+  matches.forEach((preset) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `preset-card${state.activePreset === preset.id ? " selected" : ""}`;
+    button.setAttribute("aria-pressed", String(state.activePreset === preset.id));
+    button.title = `${preset.description} · ${preset.category}`;
+    const name = document.createElement("span");
+    name.className = "preset-card-title";
+    name.textContent = preset.name;
+    const meta = document.createElement("span");
+    meta.className = "preset-card-meta";
+    meta.textContent = `${preset.category} · ${preset.shape === "full" ? "Full" : "Half"} circle`;
+    button.append(name, meta);
+    button.addEventListener("click", () => applyPreset(preset));
+    grid.append(button);
+  });
+}
+
+function applyPreset(preset) {
+  state.layers = structuredClone(preset.layers);
+  state.activeLayer = 0;
+  state.shape = preset.shape;
+  state.background = preset.background;
+  state.backgroundCustomized = false;
+  state.wordColor = preset.wordColor;
+  state.font = preset.font;
+  state.activePreset = preset.id;
+  document.querySelector("#background-color").value = chartBackground();
+  document.querySelector("#background-value").textContent = chartBackground().toUpperCase();
+  document.querySelector("#word-color").value = state.wordColor;
+  document.querySelector("#word-value").textContent = state.wordColor.toUpperCase();
+  document.querySelector("#font-select").value = state.font;
+  document.querySelector("#preset-status").textContent = `${preset.name} loaded into the live preview. Edit its layers and styles below.`;
+  if (presetDialog.open) presetDialog.close();
+  renderPresets();
+  renderLayerControls();
+  renderThemes();
+  renderChart();
+}
+
+const presetCategorySelect = document.querySelector("#preset-category");
+const presetCategories = [...new Set(presetLibrary.map((preset) => preset.category))];
+presetCategories.forEach((category) => {
+  const option = document.createElement("option");
+  option.value = category;
+  option.textContent = category;
+  presetCategorySelect.append(option);
+});
+document.querySelector("#preset-search").addEventListener("input", renderPresets);
+presetCategorySelect.addEventListener("change", renderPresets);
+renderPresets();
+
+const presetDialog = document.querySelector("#preset-dialog");
+const openPresetDialog = () => {
+  presetDialog.showModal();
+  document.querySelector("#preset-search").focus();
+};
+document.querySelector("#browse-presets").addEventListener("click", openPresetDialog);
+document.querySelector("#preset-close").addEventListener("click", () => presetDialog.close());
+presetDialog.addEventListener("click", (event) => {
+  if (event.target === presetDialog) presetDialog.close();
+});
+
 function updateColorInput(inputId, valueId, key) {
   const input = document.querySelector(inputId);
   input.addEventListener("input", () => {
@@ -589,6 +948,15 @@ document.querySelector("#theme-toggle").addEventListener("click", () => {
   renderChart();
 });
 
+document.querySelector("#shape-half").addEventListener("click", () => {
+  state.shape = "half";
+  renderChart();
+});
+document.querySelector("#shape-full").addEventListener("click", () => {
+  state.shape = "full";
+  renderChart();
+});
+
 document.querySelector("#add-layer-button").addEventListener("click", () => {
   if (state.layers.length >= 6) {
     showToast("You can add up to 6 chart layers.");
@@ -611,40 +979,85 @@ document.querySelector("#font-select").addEventListener("change", (event) => {
 document.querySelector("#reset-button").addEventListener("click", () => {
   state.layers = structuredClone(initialLayers);
   state.activeLayer = 1;
+  state.shape = "half";
+  state.activePreset = null;
   state.background = "#f6f0e7";
   state.backgroundCustomized = false;
   state.wordColor = "#fff9ef";
   state.font = "'DM Sans', sans-serif";
-  setTheme("light");
-  document.querySelector("#background-color").value = state.background;
-  document.querySelector("#background-value").textContent = state.background.toUpperCase();
+  document.querySelector("#background-color").value = chartBackground();
+  document.querySelector("#background-value").textContent = chartBackground().toUpperCase();
   document.querySelector("#word-color").value = state.wordColor;
   document.querySelector("#word-value").textContent = state.wordColor.toUpperCase();
   document.querySelector("#font-select").value = state.font;
   renderLayerControls();
   renderThemes();
   renderChart();
+  document.querySelector("#preset-status").textContent = "Example chart restored. Choose any preset to start from it.";
+  renderPresets();
   showToast("Example chart restored.");
 });
 
 document.querySelector("#export-button").addEventListener("click", async () => {
   const svg = chart.cloneNode(true);
   svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-  svg.setAttribute("width", "1520");
-  svg.setAttribute("height", "880");
+  const exportWidth = 1520;
+  const viewBox = svg.getAttribute("viewBox").split(/\s+/).map(Number);
+  const fullCircle = state.shape === "full";
+  if (fullCircle) {
+    const chartArtwork = svgElement("g", { transform: "translate(0 40)" });
+    while (svg.firstChild) chartArtwork.append(svg.firstChild);
+    svg.append(chartArtwork);
+    viewBox[0] = -160;
+    viewBox[2] = 1080;
+    viewBox[3] = 760;
+    svg.setAttribute("viewBox", viewBox.join(" "));
+  }
+  const captionColor = state.theme === "mystical"
+    ? "rgba(242, 230, 205, .78)"
+    : (state.theme === "dark" ? "rgba(238, 235, 222, .68)" : "rgba(55, 53, 45, .55)");
+  const captionX = viewBox[0] + 8.5;
+  const caption = svgElement("g", { transform: `translate(${captionX} 7.5)` });
+  caption.append(
+    svgElement("path", {
+      d: "M 8 1.5v13M 1.5 8h13M 3.4 3.4l9.2 9.2m0-9.2-9.2 9.2",
+      fill: "none",
+      stroke: state.theme === "mystical" ? "#d5b77b" : "#a28764",
+      "stroke-width": "0.55",
+      "stroke-linecap": "round",
+      transform: "scale(.75)",
+    }),
+    svgElement("text", {
+      x: 17,
+      y: 11.5,
+      fill: captionColor,
+      "font-family": "'Playfair Display', serif",
+      "font-size": "12",
+      "font-style": "italic",
+    }),
+  );
+  caption.lastElementChild.textContent = "A little clarity, one question at a time.";
+  svg.append(caption);
+  const exportHeight = Math.round(exportWidth * viewBox[3] / viewBox[2]);
+  svg.setAttribute("width", String(exportWidth));
+  svg.setAttribute("height", String(exportHeight));
   const svgData = new XMLSerializer().serializeToString(svg);
   const image = new Image();
   image.onload = () => {
     const canvas = document.createElement("canvas");
-    canvas.width = 1520;
-    canvas.height = 880;
+    canvas.width = exportWidth;
+    canvas.height = exportHeight;
     const context = canvas.getContext("2d");
     if (!context) {
       showToast("Could not create the chart image.");
       return;
     }
-    context.fillStyle = chartBackground();
-    context.fillRect(0, 0, canvas.width, canvas.height);
+    if (state.theme === "mystical") {
+      drawMysticalExportBackground(context, canvas.width, canvas.height);
+    } else {
+      context.fillStyle = chartBackground();
+      context.fillRect(0, 0, canvas.width, canvas.height);
+    }
     context.drawImage(image, 0, 0, canvas.width, canvas.height);
     canvas.toBlob((blob) => {
       if (!blob) {

@@ -287,8 +287,8 @@
       .reading-guide { gap: 12px; }
     }
   </style>
-  <link rel="stylesheet" href="styles.css?v=20261025-galaxy-stars">
-  <link rel="stylesheet" href="tarot.css?v=20261025-galaxy-stars">
+  <link rel="stylesheet" href="styles.css?v=20261027-celestial-calendar">
+  <link rel="stylesheet" href="tarot.css?v=20261027-tarot-meanings">
 </head>
 <body>
   <header class="topbar">
@@ -303,6 +303,10 @@
         <nav class="page-switch" aria-label="Orbit tools">
           <a class="page-switch-link" href="index.html"><span class="nav-label-full">Pendulum chart</span><span class="nav-label-short">Pendulum</span></a>
           <a class="page-switch-link active" href="tarot.html" aria-current="page"><span class="nav-label-full">Tarot reading</span><span class="nav-label-short">Tarot</span></a>
+          <a class="page-switch-link" href="dreams.html"><span class="nav-label-full">Dream journal</span><span class="nav-label-short">Dreams</span></a>
+          <a class="page-switch-link" href="tarot-meanings/index.html"><span class="nav-label-full">Card meanings</span><span class="nav-label-short">Cards</span></a>
+          <a class="page-switch-link" href="astro.html"><span class="nav-label-full">Moon &amp; sky</span><span class="nav-label-short">Sky</span></a>
+          <a class="page-switch-link" href="birth-chart.html"><span class="nav-label-full">Birth chart</span><span class="nav-label-short">Chart</span></a>
         </nav>
       </div>
       <div class="topbar-right">
@@ -321,6 +325,7 @@
         <div>
           <h1>Make space for <em>reflection.</em></h1>
           <p class="intro-copy">Choose a spread and take a moment with each card. Use the reading as a prompt for your own reflection.</p>
+          <a class="tarot-meanings-link" href="tarot-meanings/index.html">Explore all 78 card meanings <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -369,6 +374,64 @@
       </div>
     </section>
     </section>
+
+    <section class="deck-shop" id="shop-deck" aria-labelledby="deck-shop-title">
+      <div class="deck-editorial">
+        <div class="section-kicker">THE ORBIT TAROT DECK</div>
+        <h2 id="deck-shop-title">A little more room<br />for <em>reflection.</em></h2>
+        <p class="deck-description">Bring the cards from your reading into your hands. A complete 78-card deck, created to invite a slower, more personal moment with every draw.</p>
+        <div class="deck-details">
+          <span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="4" y="3" width="11" height="14" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M7 6h5M7 9h5M7 12h3" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><path d="M2.5 5.5V15a2 2 0 0 0 2 2" stroke="currentColor" stroke-width="1.1"/></svg> 78 illustrated cards</span>
+          <span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2.5v15M2.5 10h15M4.5 4.5l11 11m0-11-11 11" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg> Made for thoughtful readings</span>
+        </div>
+        <a class="back-to-reading" href="#reading"><span aria-hidden="true">↑</span> Return to your reading</a>
+      </div>
+
+      <div class="deck-showcase">
+        <div class="deck-image-glow" aria-hidden="true"></div>
+        <div class="deck-card deck-card-back">
+          <img src="cards/card-back.png" alt="Orbit tarot deck card back, with celestial cat artwork" loading="lazy" />
+        </div>
+        <div class="deck-card deck-card-moon">
+          <img src="cards/The%20Moon.png" alt="The Moon tarot card from the Orbit deck" loading="lazy" />
+        </div>
+        <div class="deck-card deck-card-star">
+          <img src="cards/The%20Star.png" alt="The Star tarot card from the Orbit deck" loading="lazy" />
+        </div>
+        <div class="deck-photo-caption"><span>THE ORBIT TAROT DECK</span><span>78 cards · $60 USD</span></div>
+      </div>
+
+      <div class="deck-purchase">
+        <div class="section-kicker">A DECK TO KEEP CLOSE</div>
+        <h3>Begin your collection.</h3>
+        <div class="deck-price-row">
+          <div>
+            <span class="deck-price" id="deck-price">$60</span>
+            <span class="deck-price-currency" id="deck-price-currency">USD</span>
+          </div>
+          <label class="currency-label" for="currency-select">Currency
+            <select id="currency-select" aria-label="Choose display currency">
+              <option value="USD">USD · US Dollar</option>
+              <option value="CAD">CAD · Canadian Dollar</option>
+              <option value="GBP">GBP · British Pound</option>
+              <option value="EUR">EUR · Euro</option>
+              <option value="AUD">AUD · Australian Dollar</option>
+              <option value="NZD">NZD · New Zealand Dollar</option>
+              <option value="JPY">JPY · Japanese Yen</option>
+              <option value="SGD">SGD · Singapore Dollar</option>
+              <option value="HKD">HKD · Hong Kong Dollar</option>
+              <option value="CHF">CHF · Swiss Franc</option>
+              <option value="INR">INR · Indian Rupee</option>
+            </select>
+          </label>
+        </div>
+        <p class="currency-estimate" id="currency-estimate" aria-live="polite">Loading local currency estimate…</p>
+        <button class="deck-checkout" type="button" disabled aria-describedby="checkout-note">Continue to checkout</button>
+        <p class="checkout-note" id="checkout-note">Secure checkout is not connected yet. No payments will be taken from this page.</p>
+        <p class="exchange-note">Currency conversions are estimates from live exchange rates. Your bank or payment provider may use a different rate.</p>
+      </div>
+    </section>
+    <p class="deck-store-note">Product artwork shown for preview. Final deck specifications and shipping details will be provided with the live checkout.</p>
   </main>
 
   <script>
@@ -833,5 +896,6 @@
     updateThemeButton();
     finishDraw();
   </script>
+  <script src="tarot-store.js?v=20261026-tarot-deck-shop"></script>
 </body>
 </html>

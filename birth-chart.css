@@ -1,0 +1,202 @@
+.birth-workspace { padding-bottom: 52px; }
+.birth-intro { padding-bottom: 22px; }
+.birth-panel,
+.birth-results {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  box-shadow: 0 9px 28px rgba(43, 44, 37, .035);
+}
+.birth-panel { padding: 24px; }
+.birth-panel-heading h2,
+.birth-results-heading h2,
+.birth-section-heading h2 {
+  margin: 7px 0 0;
+  color: var(--ink);
+  font: 500 17px/1.3 "Manrope", sans-serif;
+  letter-spacing: -.035em;
+}
+.birth-panel-heading > p,
+.birth-results-heading > p,
+.birth-section-heading > p {
+  max-width: 650px;
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.65;
+}
+.birth-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; margin-top: 20px; }
+.birth-field { display: grid; min-width: 0; gap: 7px; color: var(--ink); font-size: 9px; font-weight: 600; }
+fieldset.birth-field { margin: 0; padding: 0; border: 0; }
+.birth-field legend { margin-bottom: 7px; padding: 0; color: var(--ink); font-size: 9px; font-weight: 600; }
+.birth-field input,
+.birth-field select {
+  width: 100%;
+  min-height: 39px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--ink);
+  font: 10px "DM Sans", sans-serif;
+}
+.birth-date-controls { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, .72fr) minmax(0, .9fr); gap: 7px; }
+.birth-time-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+.birth-field select:disabled { color: var(--muted); opacity: .7; }
+.birth-field input:focus,
+.birth-field select:focus { border-color: var(--accent); outline: 2px solid color-mix(in srgb, var(--accent) 15%, transparent); }
+.optional-note { color: var(--muted); font-weight: 400; }
+.birth-place-field { grid-column: 1 / -1; }
+.birth-place-control { position: relative; display: block; width: 100%; }
+.birth-place-suggestions[hidden] { display: none; }
+.birth-place-suggestions {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 4px);
+  right: 0;
+  left: 0;
+  max-height: 220px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .14);
+  list-style: none;
+}
+.birth-place-suggestion {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+  font: 10px "DM Sans", sans-serif;
+  line-height: 1.5;
+  text-align: left;
+}
+.birth-place-suggestion:hover,
+.birth-place-suggestion[aria-selected="true"],
+.birth-place-suggestion:focus-visible { background: color-mix(in srgb, var(--accent) 14%, transparent); outline: none; }
+.subtle-button {
+  min-height: 37px;
+  padding: 0 13px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font: 600 9px "DM Sans", sans-serif;
+}
+.subtle-button:hover { border-color: var(--accent); color: var(--accent); }
+.subtle-button:disabled { cursor: progress; opacity: .6; }
+.birth-submit-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 0 15px;
+  border: 1px solid #71805b;
+  border-radius: 6px;
+  background: #71805b;
+  color: #fffefa;
+  cursor: pointer;
+  font: 600 11px "DM Sans", sans-serif;
+  transition: background .16s ease, transform .16s ease;
+}
+.birth-submit-button:hover:not(:disabled) { background: #5e6c4b; }
+.birth-submit-button:active:not(:disabled) { transform: translateY(1px); }
+.birth-submit-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.birth-submit-button svg { width: 15px; height: 15px; }
+.birth-submit-button:disabled { cursor: not-allowed; opacity: .78; }
+:root[data-theme="dark"] .birth-submit-button { border-color: #a3b18c; background: #a3b18c; color: #171914; }
+:root[data-theme="dark"] .birth-submit-button:hover:not(:disabled) { background: #b5c29f; }
+:root[data-theme="mystical"] .birth-submit-button { border-color: #d6bd89; background: #d6bd89; color: #241b2a; }
+:root[data-theme="mystical"] .birth-submit-button:hover:not(:disabled) { background: #ead7ad; }
+.birth-status { min-height: 15px; margin-top: 8px; color: var(--accent); font-size: 9px; line-height: 1.5; }
+.birth-results { margin-top: 18px; padding: 24px; scroll-margin-top: 24px; }
+.birth-results[hidden] { display: none; }
+.birth-results-heading { padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.chart-overview { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 15px; padding: 22px 0 17px; }
+.chart-wheel-frame { width: min(100%, 560px); justify-self: center; }
+.natal-wheel { display: block; width: 100%; height: auto; overflow: visible; }
+.chart-wheel-bg { fill: var(--paper); }
+.chart-sign-segment { fill: var(--chart-sign-fill); stroke: var(--line); stroke-width: 1; }
+.chart-sign-label { fill: var(--chart-sign-ink); font: 400 8.5px "DM Sans", sans-serif; letter-spacing: .25px; text-anchor: middle; dominant-baseline: middle; }
+.chart-wheel-ring,
+.chart-wheel-inner { fill: none; stroke: var(--line); stroke-width: 1; }
+.chart-zodiac-divider { stroke: var(--line); stroke-width: .8; }
+.chart-aspect { fill: none; stroke: var(--ink); stroke-width: .8; opacity: .48; stroke-linecap: round; stroke-linejoin: round; }
+.chart-planet-pointer { stroke: var(--ink); stroke-width: .55; opacity: .62; }
+.chart-planet text { fill: var(--ink); font: 300 11px "DM Sans", "Noto Sans Symbols 2", sans-serif; text-anchor: middle; }
+.chart-ascendant { stroke: var(--chart-sign-ink); stroke-width: 1.15; opacity: .8; }
+.chart-asc-label { fill: var(--chart-sign-ink); font: 700 8px "DM Sans", sans-serif; text-anchor: middle; dominant-baseline: middle; }
+.chart-highlight-list { display: grid; gap: 8px; }
+.chart-highlight-list { width: 100%; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.chart-highlight { padding: 12px 13px; border: 1px solid var(--line); border-radius: 7px; background: color-mix(in srgb, var(--panel) 92%, var(--ink) 3%); }
+.chart-highlight h3 { margin-top: 3px; color: var(--ink); font: 500 14px "Manrope", sans-serif; }
+.chart-highlight > p { margin-top: 5px; color: var(--muted); font-size: 8.5px; line-height: 1.6; }
+.chart-table-heading { margin: 3px 0 9px; }
+.chart-table-heading h3 { margin-top: 4px; color: var(--ink); font: 600 14px "Manrope", sans-serif; letter-spacing: -.025em; }
+.chart-placement-table { overflow-x: auto; border: 1px solid var(--line); border-radius: 7px; }
+.chart-placement-table table { width: 100%; border-collapse: collapse; text-align: left; }
+.chart-placement-table th,
+.chart-placement-table td { padding: 8px 11px; border-bottom: 1px solid var(--line); color: var(--ink); font-size: 8.5px; font-weight: 400; line-height: 1.5; }
+.chart-placement-table th { color: var(--muted); font-size: 7.5px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
+.chart-placement-table tr:last-child td { border-bottom: 0; }
+.chart-placement-table td:last-child,
+.chart-placement-table th:last-child { width: 72px; text-align: right; }
+.chart-placement-point { white-space: nowrap; }
+.chart-placement-point + .chart-placement-point::before { content: " · "; color: var(--muted); }
+.placements-section,
+.relationship-panel { margin-top: 27px; padding-top: 20px; border-top: 1px solid var(--line); }
+.birth-section-heading { margin-bottom: 13px; }
+.placement-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.placement-card { min-width: 0; padding: 12px; border: 1px solid var(--line); border-radius: 7px; }
+.placement-card-heading { display: flex; align-items: center; gap: 9px; }
+.planet-symbol { display: inline-flex; width: 24px; flex: 0 0 24px; justify-content: center; color: var(--ink); font: 22px "DM Sans", "Noto Sans Symbols 2", sans-serif; }
+.placement-card h3 { color: var(--ink); font: 500 9px "Manrope", sans-serif; }
+.placement-card-heading p { margin-top: 2px; color: var(--muted); font-size: 8px; }
+.placement-card > p { margin: 9px 0 0; color: var(--muted); font-size: 8.5px; line-height: 1.65; }
+.relationship-card-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 11px; color: var(--accent); font-size: 9px; font-weight: 600; text-decoration: none; }
+.relationship-card-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.relationship-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+.relationship-summary p { padding: 12px; border: 1px solid var(--line); border-radius: 7px; color: var(--muted); font-size: 9px; line-height: 1.65; }
+.relationship-summary strong { color: var(--ink); }
+.relationship-details { margin-top: 11px; }
+.relationship-details summary { width: fit-content; color: var(--accent); cursor: pointer; font-size: 9px; font-weight: 600; }
+.relationship-details > div { max-width: 760px; padding: 10px 0 0; color: var(--muted); font-size: 9px; line-height: 1.7; }
+.relationship-details > div p + p { margin-top: 8px; }
+.relationship-details strong { color: var(--ink); }
+:root[data-theme="dark"] .birth-panel,
+:root[data-theme="dark"] .birth-results { border-color: #383b34; }
+:root { --chart-sign-fill: #fffefa; --chart-sign-ink: #22241f; }
+:root[data-theme="dark"] { --chart-sign-fill: #ecebe4; --chart-sign-ink: #181818; }
+:root[data-theme="mystical"] { --chart-sign-fill: #eadfc8; --chart-sign-ink: #18131f; }
+:root[data-theme="dark"] .chart-highlight { background: color-mix(in srgb, var(--panel) 90%, white 2%); }
+:root[data-theme="mystical"] .birth-panel,
+:root[data-theme="mystical"] .birth-results { border-color: rgba(205, 180, 133, .24); box-shadow: 0 16px 48px rgba(4, 3, 10, .25); }
+:root[data-theme="dark"] .chart-placement-table,
+:root[data-theme="mystical"] .chart-placement-table { border-color: var(--line); }
+:root[data-theme="mystical"] .chart-highlight { background: rgba(31, 24, 43, .76); }
+:root[data-theme="mystical"] .subtle-button { border-color: #55465e; color: #ead7ad; }
+:root[data-theme="mystical"] .subtle-button:hover { background: #34283f; }
+@media (max-width: 760px) {
+  .chart-overview { grid-template-columns: 1fr; gap: 12px; }
+  .chart-wheel-frame { width: min(100%, 380px); }
+  .chart-highlight-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .birth-panel, .birth-results { padding: 18px 15px; }
+  .birth-fields { grid-template-columns: 1fr; gap: 10px; }
+  .subtle-button { justify-self: start; }
+  .placement-grid { grid-template-columns: 1fr; }
+  .relationship-summary { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .birth-panel *, .birth-results * { scroll-behavior: auto !important; }
+  .birth-submit-button { transition: none; }
+}
